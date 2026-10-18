@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lil Things — Small things. Big feelings.</title>
+  <meta name="description" content="Lil Things is a shared iPhone and iPad widget for two people. Send little drawings and photos, react on the home screen, and replay a drawing being made.">
+  <link rel="canonical" href="https://lilthings.app/">
+  <meta name="theme-color" content="#FFF3E8">
+  <meta name="color-scheme" content="light">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Lil Things">
+  <meta property="og:title" content="Lil Things — Small things. Big feelings.">
+  <meta property="og:description" content="A shared home-screen widget for two people. Send little drawings and photos, react on the widget, and replay a drawing being made.">
+  <meta property="og:url" content="https://lilthings.app/">
+  <meta property="og:image" content="https://lilthings.app/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Lil Things. Small things. Big feelings. A shared widget for two people.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lil Things — Small things. Big feelings.">
+  <meta name="twitter:description" content="A shared home-screen widget for two people. Send little drawings and photos, react on the widget, and replay a drawing being made.">
+  <meta name="twitter:image" content="https://lilthings.app/assets/og.png">
+  <meta name="twitter:image:alt" content="Lil Things. Small things. Big feelings. A shared widget for two people.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/nunito-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/nunito-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/screens/01-welcome.png" as="image">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Lil Things",
+    "operatingSystem": "iOS 17 or later",
+    "applicationCategory": "LifestyleApplication",
+    "url": "https://lilthings.app/",
+    "description": "A shared home-screen widget for two people. Send little drawings and photos, react on the widget, and replay a drawing being made."
+  }
+  </script>
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="logo" href="#top">
+        <img class="logo-mark" src="/favicon.svg" width="40" height="40" alt="">
+        <span>lil things</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-label">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#widget">Widget</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="script">a little more us.</p>
+          <h1>Small things.<br>Big feelings.</h1>
+          <p class="lede">A home-screen widget you share with one person. Draw something little, send a photo, and leave it where their day starts.</p>
+          <!-- href is set from APP_STORE_URL in /assets/js/main.js -->
+          <a class="store-badge" data-store-link target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store (opens in a new tab)">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="119.66407" height="40" viewBox="0 0 119.66407 40">
+  <title>Download_on_the_App_Store_Badge_US-UK_RGB_blk_4SVG_092917</title>
+  <g>
+    <g>
+      <g>
+        <path d="M110.13477,0H9.53468c-.3667,0-.729,0-1.09473.002-.30615.002-.60986.00781-.91895.0127A13.21476,13.21476,0,0,0,5.5171.19141a6.66509,6.66509,0,0,0-1.90088.627A6.43779,6.43779,0,0,0,1.99757,1.99707,6.25844,6.25844,0,0,0,.81935,3.61816a6.60119,6.60119,0,0,0-.625,1.90332,12.993,12.993,0,0,0-.1792,2.002C.00587,7.83008.00489,8.1377,0,8.44434V31.5586c.00489.3105.00587.6113.01515.9219a12.99232,12.99232,0,0,0,.1792,2.0019,6.58756,6.58756,0,0,0,.625,1.9043A6.20778,6.20778,0,0,0,1.99757,38.001a6.27445,6.27445,0,0,0,1.61865,1.1787,6.70082,6.70082,0,0,0,1.90088.6308,13.45514,13.45514,0,0,0,2.0039.1768c.30909.0068.6128.0107.91895.0107C8.80567,40,9.168,40,9.53468,40H110.13477c.3594,0,.7246,0,1.084-.002.3047,0,.6172-.0039.9219-.0107a13.279,13.279,0,0,0,2-.1768,6.80432,6.80432,0,0,0,1.9082-.6308,6.27742,6.27742,0,0,0,1.6172-1.1787,6.39482,6.39482,0,0,0,1.1816-1.6143,6.60413,6.60413,0,0,0,.6191-1.9043,13.50643,13.50643,0,0,0,.1856-2.0019c.0039-.3106.0039-.6114.0039-.9219.0078-.3633.0078-.7246.0078-1.0938V9.53613c0-.36621,0-.72949-.0078-1.09179,0-.30664,0-.61426-.0039-.9209a13.5071,13.5071,0,0,0-.1856-2.002,6.6177,6.6177,0,0,0-.6191-1.90332,6.46619,6.46619,0,0,0-2.7988-2.7998,6.76754,6.76754,0,0,0-1.9082-.627,13.04394,13.04394,0,0,0-2-.17676c-.3047-.00488-.6172-.01074-.9219-.01269-.3594-.002-.7246-.002-1.084-.002Z" style="fill: #a6a6a6"/>
+        <path d="M8.44483,39.125c-.30468,0-.602-.0039-.90429-.0107a12.68714,12.68714,0,0,1-1.86914-.1631,5.88381,5.88381,0,0,1-1.65674-.5479,5.40573,5.40573,0,0,1-1.397-1.0166,5.32082,5.32082,0,0,1-1.02051-1.3965,5.72186,5.72186,0,0,1-.543-1.6572,12.41351,12.41351,0,0,1-.1665-1.875c-.00634-.2109-.01464-.9131-.01464-.9131V8.44434S.88185,7.75293.8877,7.5498a12.37039,12.37039,0,0,1,.16553-1.87207,5.7555,5.7555,0,0,1,.54346-1.6621A5.37349,5.37349,0,0,1,2.61183,2.61768,5.56543,5.56543,0,0,1,4.01417,1.59521a5.82309,5.82309,0,0,1,1.65332-.54394A12.58589,12.58589,0,0,1,7.543.88721L8.44532.875H111.21387l.9131.0127a12.38493,12.38493,0,0,1,1.8584.16259,5.93833,5.93833,0,0,1,1.6709.54785,5.59374,5.59374,0,0,1,2.415,2.41993,5.76267,5.76267,0,0,1,.5352,1.64892,12.995,12.995,0,0,1,.1738,1.88721c.0029.2832.0029.5874.0029.89014.0079.375.0079.73193.0079,1.09179V30.4648c0,.3633,0,.7178-.0079,1.0752,0,.3252,0,.6231-.0039.9297a12.73126,12.73126,0,0,1-.1709,1.8535,5.739,5.739,0,0,1-.54,1.67,5.48029,5.48029,0,0,1-1.0156,1.3857,5.4129,5.4129,0,0,1-1.3994,1.0225,5.86168,5.86168,0,0,1-1.668.5498,12.54218,12.54218,0,0,1-1.8692.1631c-.2929.0068-.5996.0107-.8974.0107l-1.084.002Z"/>
+      </g>
+      <g id="_Group_" data-name="&lt;Group&gt;">
+        <g id="_Group_2" data-name="&lt;Group&gt;">
+          <g id="_Group_3" data-name="&lt;Group&gt;">
+            <path id="_Path_" data-name="&lt;Path&gt;" d="M24.76888,20.30068a4.94881,4.94881,0,0,1,2.35656-4.15206,5.06566,5.06566,0,0,0-3.99116-2.15768c-1.67924-.17626-3.30719,1.00483-4.1629,1.00483-.87227,0-2.18977-.98733-3.6085-.95814a5.31529,5.31529,0,0,0-4.47292,2.72787c-1.934,3.34842-.49141,8.26947,1.3612,10.97608.9269,1.32535,2.01018,2.8058,3.42763,2.7533,1.38706-.05753,1.9051-.88448,3.5794-.88448,1.65876,0,2.14479.88448,3.591.8511,1.48838-.02416,2.42613-1.33124,3.32051-2.66914a10.962,10.962,0,0,0,1.51842-3.09251A4.78205,4.78205,0,0,1,24.76888,20.30068Z" style="fill: #fff"/>
+            <path id="_Path_2" data-name="&lt;Path&gt;" d="M22.03725,12.21089a4.87248,4.87248,0,0,0,1.11452-3.49062,4.95746,4.95746,0,0,0-3.20758,1.65961,4.63634,4.63634,0,0,0-1.14371,3.36139A4.09905,4.09905,0,0,0,22.03725,12.21089Z" style="fill: #fff"/>
+          </g>
+        </g>
+        <g>
+          <path d="M42.30227,27.13965h-4.7334l-1.13672,3.35645H34.42727l4.4834-12.418h2.083l4.4834,12.418H43.438ZM38.0591,25.59082h3.752l-1.84961-5.44727h-.05176Z" style="fill: #fff"/>
+          <path d="M55.15969,25.96973c0,2.81348-1.50586,4.62109-3.77832,4.62109a3.0693,3.0693,0,0,1-2.84863-1.584h-.043v4.48438h-1.8584V21.44238H48.4302v1.50586h.03418a3.21162,3.21162,0,0,1,2.88281-1.60059C53.645,21.34766,55.15969,23.16406,55.15969,25.96973Zm-1.91016,0c0-1.833-.94727-3.03809-2.39258-3.03809-1.41992,0-2.375,1.23047-2.375,3.03809,0,1.82422.95508,3.0459,2.375,3.0459C52.30227,29.01563,53.24953,27.81934,53.24953,25.96973Z" style="fill: #fff"/>
+          <path d="M65.12453,25.96973c0,2.81348-1.50586,4.62109-3.77832,4.62109a3.0693,3.0693,0,0,1-2.84863-1.584h-.043v4.48438h-1.8584V21.44238H58.395v1.50586h.03418A3.21162,3.21162,0,0,1,61.312,21.34766C63.60988,21.34766,65.12453,23.16406,65.12453,25.96973Zm-1.91016,0c0-1.833-.94727-3.03809-2.39258-3.03809-1.41992,0-2.375,1.23047-2.375,3.03809,0,1.82422.95508,3.0459,2.375,3.0459C62.26711,29.01563,63.21438,27.81934,63.21438,25.96973Z" style="fill: #fff"/>
+          <path d="M71.71047,27.03613c.1377,1.23145,1.334,2.04,2.96875,2.04,1.56641,0,2.69336-.80859,2.69336-1.91895,0-.96387-.67969-1.541-2.28906-1.93652l-1.60937-.3877c-2.28027-.55078-3.33887-1.61719-3.33887-3.34766,0-2.14258,1.86719-3.61426,4.51855-3.61426,2.624,0,4.42285,1.47168,4.4834,3.61426h-1.876c-.1123-1.23926-1.13672-1.9873-2.63379-1.9873s-2.52148.75684-2.52148,1.8584c0,.87793.6543,1.39453,2.25488,1.79l1.36816.33594c2.54785.60254,3.60645,1.626,3.60645,3.44238,0,2.32324-1.85059,3.77832-4.79395,3.77832-2.75391,0-4.61328-1.4209-4.7334-3.667Z" style="fill: #fff"/>
+          <path d="M83.34621,19.2998v2.14258h1.72168v1.47168H83.34621v4.99121c0,.77539.34473,1.13672,1.10156,1.13672a5.80752,5.80752,0,0,0,.61133-.043v1.46289a5.10351,5.10351,0,0,1-1.03223.08594c-1.833,0-2.54785-.68848-2.54785-2.44434V22.91406H80.16262V21.44238H81.479V19.2998Z" style="fill: #fff"/>
+          <path d="M86.065,25.96973c0-2.84863,1.67773-4.63867,4.29395-4.63867,2.625,0,4.29492,1.79,4.29492,4.63867,0,2.85645-1.66113,4.63867-4.29492,4.63867C87.72609,30.6084,86.065,28.82617,86.065,25.96973Zm6.69531,0c0-1.9541-.89551-3.10742-2.40137-3.10742s-2.40039,1.16211-2.40039,3.10742c0,1.96191.89453,3.10645,2.40039,3.10645S92.76027,27.93164,92.76027,25.96973Z" style="fill: #fff"/>
+          <path d="M96.18606,21.44238h1.77246v1.541h.043a2.1594,2.1594,0,0,1,2.17773-1.63574,2.86616,2.86616,0,0,1,.63672.06934v1.73828a2.59794,2.59794,0,0,0-.835-.1123,1.87264,1.87264,0,0,0-1.93652,2.083v5.37012h-1.8584Z" style="fill: #fff"/>
+          <path d="M109.3843,27.83691c-.25,1.64355-1.85059,2.77148-3.89844,2.77148-2.63379,0-4.26855-1.76465-4.26855-4.5957,0-2.83984,1.64355-4.68164,4.19043-4.68164,2.50488,0,4.08008,1.7207,4.08008,4.46582v.63672h-6.39453v.1123a2.358,2.358,0,0,0,2.43555,2.56445,2.04834,2.04834,0,0,0,2.09082-1.27344Zm-6.28223-2.70215h4.52637a2.1773,2.1773,0,0,0-2.2207-2.29785A2.292,2.292,0,0,0,103.10207,25.13477Z" style="fill: #fff"/>
+        </g>
+      </g>
+    </g>
+    <g id="_Group_4" data-name="&lt;Group&gt;">
+      <g>
+        <path d="M37.82619,8.731a2.63964,2.63964,0,0,1,2.80762,2.96484c0,1.90625-1.03027,3.002-2.80762,3.002H35.67092V8.731Zm-1.22852,5.123h1.125a1.87588,1.87588,0,0,0,1.96777-2.146,1.881,1.881,0,0,0-1.96777-2.13379h-1.125Z" style="fill: #fff"/>
+        <path d="M41.68068,12.44434a2.13323,2.13323,0,1,1,4.24707,0,2.13358,2.13358,0,1,1-4.24707,0Zm3.333,0c0-.97607-.43848-1.54687-1.208-1.54687-.77246,0-1.207.5708-1.207,1.54688,0,.98389.43457,1.55029,1.207,1.55029C44.57522,13.99463,45.01369,13.42432,45.01369,12.44434Z" style="fill: #fff"/>
+        <path d="M51.57326,14.69775h-.92187l-.93066-3.31641h-.07031l-.92676,3.31641h-.91309l-1.24121-4.50293h.90137l.80664,3.436h.06641l.92578-3.436h.85254l.92578,3.436h.07031l.80273-3.436h.88867Z" style="fill: #fff"/>
+        <path d="M53.85354,10.19482H54.709v.71533h.06641a1.348,1.348,0,0,1,1.34375-.80225,1.46456,1.46456,0,0,1,1.55859,1.6748v2.915h-.88867V12.00586c0-.72363-.31445-1.0835-.97168-1.0835a1.03294,1.03294,0,0,0-1.0752,1.14111v2.63428h-.88867Z" style="fill: #fff"/>
+        <path d="M59.09377,8.437h.88867v6.26074h-.88867Z" style="fill: #fff"/>
+        <path d="M61.21779,12.44434a2.13346,2.13346,0,1,1,4.24756,0,2.1338,2.1338,0,1,1-4.24756,0Zm3.333,0c0-.97607-.43848-1.54687-1.208-1.54687-.77246,0-1.207.5708-1.207,1.54688,0,.98389.43457,1.55029,1.207,1.55029C64.11232,13.99463,64.5508,13.42432,64.5508,12.44434Z" style="fill: #fff"/>
+        <path d="M66.4009,13.42432c0-.81055.60352-1.27783,1.6748-1.34424l1.21973-.07031v-.38867c0-.47559-.31445-.74414-.92187-.74414-.49609,0-.83984.18213-.93848.50049h-.86035c.09082-.77344.81836-1.26953,1.83984-1.26953,1.12891,0,1.76563.562,1.76563,1.51318v3.07666h-.85547v-.63281h-.07031a1.515,1.515,0,0,1-1.35254.707A1.36026,1.36026,0,0,1,66.4009,13.42432Zm2.89453-.38477v-.37646l-1.09961.07031c-.62012.0415-.90137.25244-.90137.64941,0,.40527.35156.64111.835.64111A1.0615,1.0615,0,0,0,69.29543,13.03955Z" style="fill: #fff"/>
+        <path d="M71.34816,12.44434c0-1.42285.73145-2.32422,1.86914-2.32422a1.484,1.484,0,0,1,1.38086.79h.06641V8.437h.88867v6.26074h-.85156v-.71143h-.07031a1.56284,1.56284,0,0,1-1.41406.78564C72.0718,14.772,71.34816,13.87061,71.34816,12.44434Zm.918,0c0,.95508.4502,1.52979,1.20313,1.52979.749,0,1.21191-.583,1.21191-1.52588,0-.93848-.46777-1.52979-1.21191-1.52979C72.72121,10.91846,72.26613,11.49707,72.26613,12.44434Z" style="fill: #fff"/>
+        <path d="M79.23,12.44434a2.13323,2.13323,0,1,1,4.24707,0,2.13358,2.13358,0,1,1-4.24707,0Zm3.333,0c0-.97607-.43848-1.54687-1.208-1.54687-.77246,0-1.207.5708-1.207,1.54688,0,.98389.43457,1.55029,1.207,1.55029C82.12453,13.99463,82.563,13.42432,82.563,12.44434Z" style="fill: #fff"/>
+        <path d="M84.66945,10.19482h.85547v.71533h.06641a1.348,1.348,0,0,1,1.34375-.80225,1.46456,1.46456,0,0,1,1.55859,1.6748v2.915H87.605V12.00586c0-.72363-.31445-1.0835-.97168-1.0835a1.03294,1.03294,0,0,0-1.0752,1.14111v2.63428h-.88867Z" style="fill: #fff"/>
+        <path d="M93.51516,9.07373v1.1416h.97559v.74854h-.97559V13.2793c0,.47168.19434.67822.63672.67822a2.96657,2.96657,0,0,0,.33887-.02051v.74023a2.9155,2.9155,0,0,1-.4834.04541c-.98828,0-1.38184-.34766-1.38184-1.21582v-2.543h-.71484v-.74854h.71484V9.07373Z" style="fill: #fff"/>
+        <path d="M95.70461,8.437h.88086v2.48145h.07031a1.3856,1.3856,0,0,1,1.373-.80664,1.48339,1.48339,0,0,1,1.55078,1.67871v2.90723H98.69v-2.688c0-.71924-.335-1.0835-.96289-1.0835a1.05194,1.05194,0,0,0-1.13379,1.1416v2.62988h-.88867Z" style="fill: #fff"/>
+        <path d="M104.76125,13.48193a1.828,1.828,0,0,1-1.95117,1.30273A2.04531,2.04531,0,0,1,100.73,12.46045a2.07685,2.07685,0,0,1,2.07617-2.35254c1.25293,0,2.00879.856,2.00879,2.27V12.688h-3.17969v.0498a1.1902,1.1902,0,0,0,1.19922,1.29,1.07934,1.07934,0,0,0,1.07129-.5459Zm-3.126-1.45117h2.27441a1.08647,1.08647,0,0,0-1.1084-1.1665A1.15162,1.15162,0,0,0,101.63527,12.03076Z" style="fill: #fff"/>
+      </g>
+    </g>
+  </g>
+</svg>
+          </a>
+          <p class="fine">iPhone and iPad · iOS 17 or later</p>
+        </div>
+
+        <div class="stage">
+          <figure class="shot">
+            <div class="phone float">
+              <img src="/assets/screens/01-welcome.png" width="1005" height="2185" alt="Lil Things welcome screen. A yellow smile sits above the words Small things. Big feelings, with Sign in with Apple at the bottom." fetchpriority="high">
+            </div>
+            <figcaption>The welcome, on iPhone</figcaption>
+          </figure>
+          <div class="floater" aria-hidden="true">
+            <span class="floater-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2E2E3A" stroke-width="1.8" stroke-linejoin="round">
+                <path d="M12 19s-6.2-4.1-6.2-8A3.5 3.5 0 0 1 12 8.2 3.5 3.5 0 0 1 18.2 11c0 3.9-6.2 8-6.2 8z"/>
+              </svg>
+            </span>
+            they loved it
+          </div>
+          <svg class="spark one" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2l1.6 7.2L21 12l-7.4 1.6L12 22l-1.6-8.4L3 12l7.4-1.8L12 2z" fill="#2E2E3A"/>
+          </svg>
+          <svg class="spark two" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2l1.6 7.2L21 12l-7.4 1.6L12 22l-1.6-8.4L3 12l7.4-1.8L12 2z" fill="#2E2E3A"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <p class="kicker">How it works</p>
+        <h2>Three small steps.</h2>
+        <p class="section-intro">That’s the whole idea. A Space, a little thing, and a widget.</p>
+        <div class="how-layout">
+          <ol class="steps">
+            <li class="step">
+              <span class="step-num" aria-hidden="true">01</span>
+              <h3>Open a Space</h3>
+              <p>Invite one person. A Space is just the two of you — your corner, with nobody else in it.</p>
+            </li>
+            <li class="step">
+              <span class="step-num" aria-hidden="true">02</span>
+              <h3>Leave something little</h3>
+              <p>A drawing, a photo, a note in your handwriting. It does not have to be good. It has to be from you.</p>
+            </li>
+            <li class="step">
+              <span class="step-num" aria-hidden="true">03</span>
+              <h3>Let them find it</h3>
+              <p>It shows up on their widget. They can react right there, or watch the drawing appear, stroke by stroke.</p>
+            </li>
+          </ol>
+          <figure class="shot">
+            <div class="phone">
+              <img src="/assets/screens/02-welcome-replay.png" width="1005" height="2185" alt="Lil Things screen titled Watch it happen, explaining that you can replay a drawing as it was made." loading="lazy" decoding="async">
+            </div>
+            <figcaption>Watch it happen</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <p class="kicker">In the app</p>
+        <h2>Little on purpose.</h2>
+        <p class="section-intro">The app stays small, so the feeling doesn’t.</p>
+        <div class="features">
+          <article class="feature">
+            <div>
+              <p class="kicker">Spaces</p>
+              <h3>A corner for two</h3>
+              <p>Each Space is shared by two people. Name it, keep your things there, and leave the rest of the internet outside.</p>
+            </div>
+            <figure class="shot">
+              <div class="phone">
+                <img src="/assets/screens/04-spaces.png" width="1005" height="2185" alt="Spaces screen titled Your little spaces, with a shared space called Our little corner and a yellow drawing that says hi, sunshine." loading="lazy" decoding="async">
+              </div>
+              <figcaption>Your little spaces</figcaption>
+            </figure>
+          </article>
+
+          <article class="feature reverse">
+            <div>
+              <p class="kicker">Watch it happen</p>
+              <h3>See it being made</h3>
+              <p>A drawing can replay the way it was made. Every stroke, in order. It feels like standing next to someone while they draw it for you.</p>
+            </div>
+            <figure class="shot">
+              <div class="phone">
+                <img src="/assets/screens/05-detail.png" width="1005" height="2185" alt="A shared sun drawing that says hi, sunshine, open in a Space, with Watch it happen and reaction buttons." loading="lazy" decoding="async">
+              </div>
+              <figcaption>A thing, opened</figcaption>
+            </figure>
+          </article>
+
+          <article class="feature">
+            <div>
+              <p class="kicker">On the widget</p>
+              <h3>A tap, not a chat</h3>
+              <p>Love, a hug, a sparkle, a smile. On the widget, so you can answer without opening a thread.</p>
+            </div>
+            <figure class="shot">
+              <div class="phone">
+                <img src="/assets/screens/03-welcome-widget.png" width="1005" height="2185" alt="Lil Things screen titled Leave a little reaction, showing love, hug, sparkle, and smile." loading="lazy" decoding="async">
+              </div>
+              <figcaption>Reactions, explained</figcaption>
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section widget-section" id="widget">
+      <div class="container">
+        <div class="widget-layout">
+          <div>
+            <p class="kicker">The widget</p>
+            <h2>On the home screen, where the morning starts.</h2>
+            <p class="section-intro">The widget is the point. A little drawing waiting there, in a size that fits the day. Reactions sit on it, so “I saw this” is one tap.</p>
+            <ul class="pills">
+              <li>Small</li>
+              <li>Medium</li>
+              <li>Large</li>
+            </ul>
+          </div>
+          <div class="widget-demo">
+            <div class="widget">
+              <div class="widget-top">
+                <span class="ava" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#2E2E3A" stroke-width="1.7" stroke-linejoin="round">
+                    <path d="M12 3l1.3 6.1L20 12l-6.7 1.3L12 21l-1.3-7.7L4 12l6.7-1.9L12 3z"/>
+                  </svg>
+                </span>
+                <div>
+                  <p class="widget-title">Made this for you
+                    <svg class="mini-sun" viewBox="0 0 24 24" aria-hidden="true">
+                      <circle cx="12" cy="12" r="4" fill="none" stroke="#2E2E3A" stroke-width="1.7"/>
+                      <path d="M12 3v2.2M12 18.8V21M3 12h2.2M18.8 12H21M6 6l1.6 1.6M16.4 16.4 18 18M18 6l-1.6 1.6M7.6 16.4 6 18" fill="none" stroke="#2E2E3A" stroke-width="1.7" stroke-linecap="round"/>
+                    </svg>
+                  </p>
+                  <p class="widget-sub">A little something for you</p>
+                </div>
+                <span class="wave" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="#2E2E3A">
+                    <rect x="4" y="10" width="2.2" height="6" rx="1"/>
+                    <rect x="8.4" y="7" width="2.2" height="12" rx="1"/>
+                    <rect x="12.8" y="9" width="2.2" height="8" rx="1"/>
+                    <rect x="17.2" y="6" width="2.2" height="10" rx="1"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="widget-art">
+                <svg class="sun" viewBox="0 0 160 160" aria-hidden="true">
+                  <g class="rays" fill="none" stroke="#2E2E3A" stroke-width="6" stroke-linecap="round">
+                    <path d="M80 12v18M80 130v18M12 80h18M130 80h18"/>
+                    <path d="M32 32l13 13M115 115l13 13M128 32l-13 13M45 115l-13 13"/>
+                  </g>
+                  <circle cx="80" cy="80" r="34" fill="none" stroke="#2E2E3A" stroke-width="6"/>
+                  <ellipse cx="68" cy="76" rx="4" ry="6" fill="#2E2E3A"/>
+                  <ellipse cx="92" cy="76" rx="4" ry="6" fill="#2E2E3A"/>
+                  <path class="smile" pathLength="100" d="M62 90c6 16 30 16 36 0" fill="none" stroke="#2E2E3A" stroke-width="6" stroke-linecap="round"/>
+                </svg>
+                <p class="hi">hi, sunshine.</p>
+                <svg class="art-spark a" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2l1.5 6.8L21 12l-7.5 1.5L12 22l-1.5-8.5L3 12l7.5-1.8L12 2z" fill="#2E2E3A"/>
+                </svg>
+                <svg class="art-spark b" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2l1.5 6.8L21 12l-7.5 1.5L12 22l-1.5-8.5L3 12l7.5-1.8L12 2z" fill="#C9A227"/>
+                </svg>
+              </div>
+              <div class="reacts" role="group" aria-label="Reactions on the widget">
+                <button type="button" aria-pressed="false" aria-label="Love" data-sent="A little love, on its way.">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+                    <path d="M12 19s-6.2-4.1-6.2-8A3.5 3.5 0 0 1 12 8.2 3.5 3.5 0 0 1 18.2 11c0 3.9-6.2 8-6.2 8z"/>
+                  </svg>
+                </button>
+                <button type="button" aria-pressed="false" aria-label="Hug" data-sent="A hug, on its way.">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                    <circle cx="12" cy="7.2" r="2.1"/>
+                    <path d="M8.2 13.2c.2-2.4 1.4-3.8 3.8-3.8s3.6 1.4 3.8 3.8"/>
+                    <path d="M4.2 12.5c1.8.8 2.8 2.4 2.8 4.4M19.8 12.5c-1.8.8-2.8 2.4-2.8 4.4"/>
+                  </svg>
+                </button>
+                <button type="button" aria-pressed="false" aria-label="Sparkle" data-sent="A sparkle, on its way.">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+                    <path d="M12 3.2 13.4 9.4 19.8 12 13.4 14.6 12 20.8 10.6 14.6 4.2 12 10.6 9.4 12 3.2z"/>
+                  </svg>
+                </button>
+                <button type="button" aria-pressed="false" aria-label="Smile" data-sent="A smile, on its way.">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                    <circle cx="12" cy="12" r="7"/>
+                    <circle cx="9.4" cy="11" r="0.8" fill="currentColor" stroke="none"/>
+                    <circle cx="14.6" cy="11" r="0.8" fill="currentColor" stroke="none"/>
+                    <path d="M9 14.2c1 1.5 5 1.5 6 0"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <p class="react-status" id="react-status" aria-live="polite">Tap a reaction. It stays on the widget.</p>
+          </div>
+        </div>
+
+        <div class="guide">
+          <div>
+            <h3>Put it on your Home Screen</h3>
+            <p>Touch and hold the Home Screen, tap Edit, then Add Widget. Search for Lil Things, pick a size, and choose the Space.</p>
+          </div>
+          <figure class="shot">
+            <div class="phone">
+              <img src="/assets/screens/09-widgetguide.png" width="1005" height="2185" alt="Instructions for adding the Lil Things widget, with small, medium, and large previews on a home screen." loading="lazy" decoding="async">
+            </div>
+            <figcaption>Small, medium, large</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="you">
+      <div class="container you-layout">
+        <div>
+          <p class="kicker">You</p>
+          <h2>So they know it’s you.</h2>
+          <p class="section-intro">A photo, a display name, and a color. Quiet hours, for when you’d like the little things to wait until morning. Sign in with Apple, and that’s the account.</p>
+          <ul class="ticks">
+            <li>A photo and a display name</li>
+            <li>An accent color</li>
+            <li>Quiet hours</li>
+            <li>Sign in with Apple</li>
+          </ul>
+        </div>
+        <figure class="shot">
+          <div class="phone">
+            <img src="/assets/screens/07-profile.png" width="1005" height="2185" alt="Profile screen with a photo, display name, accent colors, quiet hours, and Sign in with Apple." loading="lazy" decoding="async">
+          </div>
+          <figcaption>Your profile</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <p class="kicker">FAQ</p>
+        <h2>Questions, answered gently.</h2>
+        <div class="faq">
+          <details>
+            <summary>
+              <h3>What is Lil Things?</h3>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <p>A shared home-screen widget for two people. You send little drawings and photos into a Space, and they show up on each other’s phone.</p>
+          </details>
+          <details>
+            <summary>
+              <h3>Who is a Space for?</h3>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <p>Two people. A partner, a friend, someone you like to send small things to. You can keep more than one Space.</p>
+          </details>
+          <details>
+            <summary>
+              <h3>Which phones and tablets?</h3>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <p>iPhone and iPad, on iOS 17 or later. Both of you need the app.</p>
+          </details>
+          <details>
+            <summary>
+              <h3>What is Watch It Happen?</h3>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <p>It’s a replay of a drawing, stroke by stroke, in the order it was made. Photos stay as photos.</p>
+          </details>
+          <details>
+            <summary>
+              <h3>How do reactions work?</h3>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <p>You can leave a heart, a hug, a sparkle, or a smile on the widget, or on the thing they sent. It’s a small way to say you saw it.</p>
+          </details>
+          <details>
+            <summary>
+              <h3>What happens to my drawings and photos?</h3>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <p>They’re stored so you can share them with the people in your Spaces, including on the widget. Sign in is with Apple. There are no ads, and we don’t sell your data. The <a href="/privacy.html">privacy policy</a> has the rest.</p>
+          </details>
+          <details>
+            <summary>
+              <h3>How do I add the widget?</h3>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <p>Touch and hold the Home Screen, tap Edit, then Add Widget, and search for Lil Things.</p>
+          </details>
+          <details>
+            <summary>
+              <h3>How do I get help?</h3>
+              <span class="faq-icon" aria-hidden="true"></span>
+            </summary>
+            <p>Write to <a href="mailto:support@lilthings.app">support@lilthings.app</a>, or visit the <a href="/support.html">support page</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="close">
+      <div class="container">
+        <img class="close-mark" src="/favicon.svg" width="72" height="72" alt="">
+        <p class="script">a little more us.</p>
+        <h2>Your little world starts here.</h2>
+        <p class="fine">iPhone and iPad · iOS 17 or later</p>
+        <a class="text-link" data-store-link target="_blank" rel="noopener noreferrer">
+          Get Lil Things on the App Store
+          <span class="sr-only">(opens in a new tab)</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="#top">
+            <img class="logo-mark" src="/favicon.svg" width="40" height="40" alt="">
+            <span>lil things</span>
+          </a>
+          <span class="script">a little more us.</span>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/support.html">Support</a>
+          <a href="mailto:support@lilthings.app">support@lilthings.app</a>
+        </nav>
+      </div>
+      <p class="copyright">© 2026 Lil Things</p>
+      <p class="legal">Apple, the Apple logo, iPhone, and iPad are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. iOS is a trademark or registered trademark of Cisco in the U.S. and other countries and is used under license.</p>
+    </div>
+  </footer>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
