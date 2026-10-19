@@ -102,17 +102,25 @@ a { color: inherit; }
   backdrop-filter: blur(8px);
 }
 
-/* Stage */
+/* Stage: one grid. Desktop puts the phone in its own column; mobile stacks
+   headline, phone, form, then the rest, so the widget sits above the fold. */
 .stage {
   flex: 1;
   width: min(1120px, 100% - 2.5rem);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  align-items: center;
-  gap: clamp(2rem, 6vw, 5rem);
-  padding: clamp(2rem, 6vh, 4.5rem) 0 clamp(2rem, 5vh, 3.5rem);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  grid-template-rows: 1fr repeat(5, auto) 1fr;
+  column-gap: clamp(2rem, 6vw, 5rem);
+  padding: clamp(1.5rem, 4vh, 3rem) 0 clamp(2rem, 5vh, 3.5rem);
 }
+.stage > * { grid-column: 1; }
+.stage > .script { grid-row: 2; }
+.stage > h1 { grid-row: 3; }
+.stage > .lede { grid-row: 4; }
+.stage > .join { grid-row: 5; }
+.stage > .points { grid-row: 6; }
+.stage > .art { grid-column: 2; grid-row: 1 / -1; align-self: center; }
 
 .script { font-family: var(--script); font-size: clamp(1.5rem, 2.4vw, 1.9rem); margin: 0 0 .25rem; color: var(--soft); transform: rotate(-2deg); transform-origin: left; }
 h1 {
@@ -177,55 +185,88 @@ h1 {
 .points span { margin-right: .2rem; }
 
 /* Phone illustration */
-.art { display: flex; justify-content: center; }
+.art { display: flex; justify-content: center; align-items: flex-start; }
 .phone {
   position: relative;
-  width: min(320px, 78vw);
+  width: min(330px, 78vw);
   aspect-ratio: 9 / 19.2;
-  border-radius: 48px;
+  border-radius: 50px;
   background: linear-gradient(170deg, color-mix(in srgb, var(--lavender) 60%, var(--phone)), var(--phone) 45%, color-mix(in srgb, var(--pink) 55%, var(--phone)));
   border: 10px solid var(--phone-edge);
   box-shadow: var(--shadow);
-  padding: 3.4rem 1.15rem 1rem;
-  transform: rotate(3deg);
+  padding: 3.3rem 1rem 1rem;
+  transform: rotate(2.5deg);
   overflow: hidden;
 }
 .island { position: absolute; top: 11px; left: 50%; width: 31%; height: 24px; transform: translateX(-50%); background: #0d0c10; border-radius: 20px; }
 .clock { position: absolute; top: 12px; left: 1.4rem; font-weight: 800; font-size: .82rem; }
-.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .9rem .85rem; }
+.who-chip {
+  position: absolute; top: 2.05rem; right: 1rem; z-index: 3;
+  font-family: var(--script); font-size: 1.15rem; line-height: 1;
+  padding: .2rem .55rem .25rem; border-radius: 999px;
+  background: color-mix(in srgb, var(--card) 85%, transparent);
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .85rem .8rem; }
 .app { display: block; aspect-ratio: 1; border-radius: 26%; background: var(--card); box-shadow: 0 2px 6px rgba(0,0,0,.06); }
 .a1, .a6, .a11 { background: var(--sky); }
 .a2, .a7, .a12 { background: var(--mint); }
 .a3, .a8 { background: var(--pink); }
 .a4, .a9 { background: var(--lavender); }
 .a5, .a10 { background: color-mix(in srgb, var(--yellow) 70%, var(--card)); }
+
+/* The widget (iOS large size) */
 .widget {
-  grid-column: span 2; grid-row: span 2;
-  aspect-ratio: 1;
-  border-radius: 22%;
+  grid-column: 1 / -1;
+  aspect-ratio: 1 / .98;
+  margin-bottom: .5rem;
+  border-radius: 26px;
   background: var(--yellow);
   position: relative;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  box-shadow: 0 10px 24px rgba(80, 46, 20, .18);
+  display: flex; flex-direction: column;
+  padding: 12px 13px 16px;
+  box-shadow: 0 12px 28px rgba(80, 46, 20, .2);
   color: #2e2e3a;
 }
-.doodle { width: 64%; height: auto; margin-top: 12%; }
-.doodle path { fill: none; stroke: #2e2e3a; stroke-width: 7; stroke-linecap: round; }
-.eye { stroke-dasharray: 10; stroke-dashoffset: 10; animation: draw-eye 6s infinite; }
-.eye-r { animation-name: draw-eye-r; }
-.smile { stroke-dasharray: 80; stroke-dashoffset: 80; animation: draw-smile 6s infinite; }
-.caption { font-size: clamp(.5rem, 2.4vw, .62rem); font-weight: 800; margin-top: -.7rem; white-space: nowrap; opacity: 0; animation: fade 6s infinite; }
-.from { position: absolute; top: 9%; left: 9%; font-size: .55rem; font-weight: 800; display: flex; align-items: center; gap: .25rem; opacity: .75; }
-.from i { font-style: normal; width: 1.1rem; height: 1.1rem; display: grid; place-items: center; border-radius: 50%; background: #ead6f6; font-size: .55rem; }
-.reacts { position: absolute; right: -14%; bottom: -12%; display: flex; gap: .25rem; z-index: 2; }
-.reacts span {
-  font-size: .8rem; line-height: 1; padding: .32rem; border-radius: 999px;
-  background: #fffaf4;
-  box-shadow: 0 4px 12px rgba(0,0,0,.16);
-  transform: scale(0); animation: pop 6s infinite;
+.w-head { display: flex; align-items: center; justify-content: space-between; gap: .4rem; }
+.w-space { font-weight: 800; font-size: .8rem; letter-spacing: -.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.w-avatars { display: flex; flex-direction: row-reverse; }
+.av {
+  font-style: normal; font-weight: 800; font-size: .6rem; color: #2e2e3a;
+  width: 1.35rem; height: 1.35rem; border-radius: 50%;
+  display: grid; place-items: center;
+  border: 2px solid var(--yellow);
+  transition: transform .3s ease;
 }
-.reacts span:nth-child(2) { animation-delay: .15s; }
-.reacts span:nth-child(3) { animation-delay: .3s; }
+.w-avatars .av { margin-left: -.4rem; animation: av-in .5s ease backwards; }
+.w-avatars .av:nth-last-child(2) { animation-delay: .06s; } .w-avatars .av:nth-last-child(3) { animation-delay: .12s; }
+.w-avatars .av:nth-last-child(4) { animation-delay: .18s; } .w-avatars .av:nth-last-child(5) { animation-delay: .24s; }
+.w-avatars .av.is-sender { transform: translateY(-3px) scale(1.12); z-index: 1; box-shadow: 0 3px 8px rgba(80,46,20,.25); }
+.w-sender { display: flex; align-items: center; gap: .3rem; font-size: .66rem; font-weight: 800; margin-top: .15rem; }
+.w-sender .dot { width: .45rem; height: .45rem; border-radius: 50%; }
+.w-sender em { font-style: normal; font-weight: 700; opacity: .55; }
+.w-canvas { flex: 1; width: 100%; min-height: 0; overflow: visible; }
+.w-canvas .stroke { fill: none; stroke-width: 6.5; stroke-linecap: round; stroke-linejoin: round; }
+.w-canvas .hand { font-family: var(--script); font-weight: 600; }
+.w-canvas .nib { transition: opacity .15s; }
+.w-reacts { position: absolute; left: 10px; right: 10px; bottom: -13px; display: flex; justify-content: center; gap: .3rem; z-index: 2; pointer-events: none; }
+.rx {
+  display: inline-flex; align-items: center; gap: .15rem;
+  padding: .2rem .25rem .2rem .4rem; border-radius: 999px;
+  background: #fffaf4; box-shadow: 0 4px 12px rgba(0,0,0,.16);
+  transform: scale(0) translateY(6px); opacity: 0;
+  transition: transform .38s cubic-bezier(.34,1.56,.64,1), opacity .2s;
+}
+.rx.on { transform: none; opacity: 1; }
+.rx b { font-size: .85rem; line-height: 1; font-weight: 400; }
+.av.sm { width: 1.05rem; height: 1.05rem; font-size: .5rem; border: 1.5px solid #fffaf4; }
+.widget.swap .w-head, .widget.swap .w-canvas { animation: swap .7s ease; }
+.who-chip { animation: chip .6s ease; }
+@keyframes swap { 0% { opacity: 0; transform: translateY(4px); } 100% { opacity: 1; transform: none; } }
+@keyframes av-in { from { opacity: 0; transform: scale(.4); } }
+@keyframes chip { from { opacity: 0; } }
+.is-still .rx { transition: none; }
+
 .dock {
   position: absolute; left: .7rem; right: .7rem; bottom: .7rem;
   display: grid; grid-template-columns: repeat(4, 1fr); gap: .85rem;
@@ -236,17 +277,9 @@ h1 {
 .dock i { display: block; aspect-ratio: 1; border-radius: 26%; background: var(--card); }
 .dock .lt { background: var(--yellow) url("/favicon.svg") center / 100% no-repeat; }
 
-@keyframes draw-eye   { 0%, 6% { stroke-dashoffset: 10; } 12%, 88% { stroke-dashoffset: 0; } 96%, 100% { stroke-dashoffset: 10; } }
-@keyframes draw-eye-r { 0%, 12% { stroke-dashoffset: 10; } 18%, 88% { stroke-dashoffset: 0; } 96%, 100% { stroke-dashoffset: 10; } }
-@keyframes draw-smile { 0%, 20% { stroke-dashoffset: 80; } 42%, 88% { stroke-dashoffset: 0; } 96%, 100% { stroke-dashoffset: 80; } }
-@keyframes fade       { 0%, 44% { opacity: 0; } 52%, 86% { opacity: 1; } 94%, 100% { opacity: 0; } }
-@keyframes pop        { 0%, 55% { transform: scale(0); } 61% { transform: scale(1.15); } 65%, 86% { transform: scale(1); } 92%, 100% { transform: scale(0); } }
-
 @media (prefers-reduced-motion: reduce) {
-  .eye, .smile { animation: none; stroke-dashoffset: 0; }
-  .caption { animation: none; opacity: 1; }
-  .reacts span { animation: none; transform: none; }
-  .join button { transition: none; }
+  .rx, .av, .join button { transition: none; }
+  .w-avatars .av, .who-chip, .widget.swap .w-head, .widget.swap .w-canvas { animation: none; }
 }
 
 /* Footer */
@@ -265,12 +298,33 @@ h1 {
 
 /* Mobile */
 @media (max-width: 860px) {
-  .stage { grid-template-columns: 1fr; text-align: center; padding-top: 2.2rem; gap: 2.5rem; }
-  .script { transform-origin: center; }
-  .lede, .join { margin-left: auto; margin-right: auto; }
-  .points { justify-content: center; }
+  .top { padding-top: max(.8rem, env(safe-area-inset-top)); }
+  .brand { font-size: 1.05rem; }
+  .brand img { width: 30px; height: 30px; border-radius: 8px; }
+  .stage { grid-template-columns: 1fr; grid-template-rows: none; text-align: center; padding-top: 1rem; }
+  .stage > * { grid-column: 1; }
+  .stage > .script { grid-row: 1; }
+  .stage > h1 { grid-row: 2; }
+  .stage > .art { grid-column: 1; grid-row: 3; }
+  .stage > .join { grid-row: 4; }
+  .stage > .lede { grid-row: 5; }
+  .stage > .points { grid-row: 6; }
+  .script { display: none; }
+  h1 { font-size: clamp(2rem, 9vw, 3rem); margin-bottom: .9rem; }
+  /* Show the top of the phone (widget + a row of apps), softly cropped. */
+  .art {
+    height: clamp(318px, 86vw, 380px);
+    overflow: hidden;
+    margin: 0 -1.25rem .8rem;
+    padding-top: 4px;
+    -webkit-mask-image: linear-gradient(#000 88%, transparent);
+            mask-image: linear-gradient(#000 88%, transparent);
+  }
+  .phone { width: min(278px, 74vw); transform: none; border-width: 9px; padding-top: 3rem; flex: none; }
+  .join { margin: 0 auto 1.6rem; width: 100%; }
+  .lede { margin: 0 auto 1.4rem; font-size: 1.02rem; }
+  .points { justify-content: center; margin-bottom: .5rem; }
   .note, .status { margin-left: 0; }
-  .phone { width: min(260px, 70vw); transform: rotate(2deg); }
   .foot { justify-content: center; text-align: center; }
   .foot nav { justify-content: center; }
 }

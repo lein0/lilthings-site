@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Lil Things — Draw on each other’s widgets. Coming soon to iPhone.</title>
-  <meta name="description" content="Lil Things is a tiny iPhone app for drawing on each other’s Home Screen widgets. Coming soon. Leave your email to hear the moment it launches.">
+  <meta name="description" content="Lil Things is a tiny iPhone app for drawing on each other’s Home Screen widgets, for couples, friends, and groups. Coming soon. Leave your email to hear the moment it launches.">
   <link rel="canonical" href="https://lilthings.app/">
   <meta name="theme-color" content="#FFF3E8" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1C1B22" media="(prefers-color-scheme: dark)">
@@ -41,57 +41,53 @@
   </header>
 
   <main id="content" class="stage">
-    <section class="copy" aria-labelledby="headline">
-      <p class="script">a little more us.</p>
-      <h1 id="headline">Draw on each other’s widgets.</h1>
-      <p class="lede">Lil Things is a tiny app for the people you love. Doodle something small, and watch it draw itself right on their Home Screen. No feeds. No noise. Just little things.</p>
+    <p class="script">a little more us.</p>
+    <h1 id="headline">Draw on each other’s widgets.</h1>
 
-      <form class="join" id="join" novalidate aria-describedby="join-note">
-        <label class="sr-only" for="email">Email address</label>
-        <div class="field">
-          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" maxlength="254" placeholder="you@example.com" required>
-          <button type="submit"><span class="btn-label">Notify me</span></button>
-        </div>
-        <div class="hp" aria-hidden="true">
-          <label for="website">Leave this field empty</label>
-          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
-        </div>
-        <p class="note" id="join-note">Be the first to hear when it launches. No spam, ever.</p>
-        <p class="status" id="join-status" role="status" aria-live="polite"></p>
-      </form>
-
-      <ul class="points" aria-label="What Lil Things does">
-        <li><span aria-hidden="true">✏️</span> Live drawings that replay on the widget</li>
-        <li><span aria-hidden="true">🫶</span> Private Spaces for your people</li>
-        <li><span aria-hidden="true">📣</span> Share with followers, if you want</li>
-      </ul>
-    </section>
-
-    <section class="art" aria-label="Illustration: a Lil Things widget on an iPhone Home Screen, with a smiley face drawing itself">
+    <section class="art" aria-label="Animation: handwritten notes and doodles from a couple and then a group of friends appear on a Lil Things Home Screen widget, with friends reacting">
       <div class="phone" aria-hidden="true">
         <div class="island"></div>
         <div class="clock">9:41</div>
+        <span class="who-chip" id="who-chip">for your person</span>
         <div class="grid">
-          <div class="widget">
-            <svg viewBox="0 0 120 120" class="doodle">
-              <path class="eye eye-l" d="M44 46 v8"/>
-              <path class="eye eye-r" d="M76 46 v8"/>
-              <path class="smile" d="M34 70 C46 92 74 92 86 70"/>
-            </svg>
-            <span class="caption">a little hello ☀️</span>
-            <span class="from"><i>C</i> from Chelsea</span>
-            <span class="reacts"><span>❤️</span><span>😂</span><span>✨</span></span>
+          <div class="widget" id="widget">
+            <div class="w-head">
+              <span class="w-space" id="w-space">Chelsey &amp; Eric</span>
+              <span class="w-avatars" id="w-avatars"></span>
+            </div>
+            <div class="w-sender" id="w-sender"><i class="dot"></i><span>Chelsey</span><em>just now</em></div>
+            <svg class="w-canvas" id="w-canvas" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet"></svg>
+            <div class="w-reacts" id="w-reacts"></div>
           </div>
-          <i class="app a1"></i><i class="app a2"></i>
-          <i class="app a3"></i><i class="app a4"></i>
+          <i class="app a1"></i><i class="app a2"></i><i class="app a3"></i><i class="app a4"></i>
           <i class="app a5"></i><i class="app a6"></i><i class="app a7"></i><i class="app a8"></i>
           <i class="app a9"></i><i class="app a10"></i><i class="app a11"></i><i class="app a12"></i>
-          <i class="app a4"></i><i class="app a1"></i><i class="app a5"></i><i class="app a3"></i>
-          <i class="app a2"></i><i class="app a8"></i><i class="app a6"></i><i class="app a9"></i>
         </div>
         <div class="dock"><i></i><i></i><i></i><i class="lt"></i></div>
       </div>
     </section>
+
+    <form class="join" id="join" novalidate aria-describedby="join-note">
+      <label class="sr-only" for="email">Email address</label>
+      <div class="field">
+        <input id="email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" maxlength="254" placeholder="you@example.com" required>
+        <button type="submit"><span class="btn-label">Notify me</span></button>
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label for="website">Leave this field empty</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <p class="note" id="join-note">Be the first to hear when it launches. No spam, ever.</p>
+      <p class="status" id="join-status" role="status" aria-live="polite"></p>
+    </form>
+
+    <p class="lede">Lil Things is a tiny app for your person and your people. Doodle a little note and watch it draw itself, stroke by stroke, right on their Home Screen. For two of you, or the whole crew. No feeds. No noise. Just little things.</p>
+
+    <ul class="points" aria-label="What Lil Things does">
+      <li><span aria-hidden="true">✏️</span> Live drawings that replay on the widget</li>
+      <li><span aria-hidden="true">🫶</span> Spaces for couples, friends, and crews</li>
+      <li><span aria-hidden="true">📣</span> Share with followers, if you want</li>
+    </ul>
   </main>
 
   <footer class="foot">
@@ -106,5 +102,6 @@
   </footer>
 
   <script src="/assets/js/teaser.js" defer></script>
+  <script src="/assets/js/widget.js" defer></script>
 </body>
 </html>
