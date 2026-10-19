@@ -1,6 +1,6 @@
 # Lil Things
 
-Promotional site for the Lil Things iOS app, served as static files from the repository root (GitHub Pages).
+Launch teaser site for the Lil Things iOS app, served as static files from the repository root (GitHub Pages).
 
 Preview locally:
 
@@ -10,7 +10,7 @@ python3 -m http.server 8080
 
 Then open `http://localhost:8080/`.
 
-The App Store link lives in one place: `APP_STORE_URL` at the top of `assets/js/main.js`.
+The homepage is a pre-launch teaser with a waitlist form (`assets/js/teaser.js`). Signups go to the Supabase table `public.waitlist` via the `join_waitlist` RPC. Legal pages still use `assets/css/styles.css` and `assets/js/main.js`.
 
 - Home: `/`
 - Privacy Policy: `/privacy.html`
