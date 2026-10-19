@@ -38,18 +38,18 @@ if (toggle && nav) {
   });
 }
 
-const reactButtons = document.querySelectorAll(".reacts button");
-const reactStatus = document.querySelector("#react-status");
+const motionBtn = document.querySelector(".motion-toggle");
+if (motionBtn) {
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const syncReduce = () => {
+    motionBtn.hidden = reduce.matches;
+  };
+  syncReduce();
+  reduce.addEventListener("change", syncReduce);
 
-reactButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const wasPressed = button.getAttribute("aria-pressed") === "true";
-    reactButtons.forEach((other) => other.setAttribute("aria-pressed", "false"));
-    if (wasPressed) {
-      if (reactStatus) reactStatus.textContent = "Tap a reaction. It stays on the widget.";
-      return;
-    }
-    button.setAttribute("aria-pressed", "true");
-    if (reactStatus) reactStatus.textContent = button.dataset.sent || "Sent.";
+  motionBtn.addEventListener("click", () => {
+    const paused = document.documentElement.classList.toggle("is-paused");
+    motionBtn.setAttribute("aria-pressed", paused ? "true" : "false");
+    motionBtn.textContent = paused ? "Play animation" : "Pause animation";
   });
-});
+}

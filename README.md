@@ -14,4 +14,6 @@ The App Store link lives in one place: `APP_STORE_URL` at the top of `assets/js/
 
 - Home: `/`
 - Privacy Policy: `/privacy.html`
+- Terms of Use: `/terms.html`
+- Community Guidelines: `/community-guidelines.html`
 - Support: `/support.html`

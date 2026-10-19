@@ -4,30 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lil Things — Small things. Big feelings.</title>
-  <meta name="description" content="Lil Things is a shared iPhone and iPad widget for two people. Send little drawings and photos, react on the home screen, and replay a drawing being made.">
+  <meta name="description" content="Lil Things lives on your iPhone Home Screen. Share drawings with your people, watch them replay on a widget, and react without opening another app.">
   <link rel="canonical" href="https://lilthings.app/">
   <meta name="theme-color" content="#FFF3E8">
   <meta name="color-scheme" content="light">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lil Things">
   <meta property="og:title" content="Lil Things — Small things. Big feelings.">
-  <meta property="og:description" content="A shared home-screen widget for two people. Send little drawings and photos, react on the widget, and replay a drawing being made.">
+  <meta property="og:description" content="A Home Screen widget for the people you care about. Drawings replay beside your other apps.">
   <meta property="og:url" content="https://lilthings.app/">
   <meta property="og:image" content="https://lilthings.app/assets/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Lil Things. Small things. Big feelings. A shared widget for two people.">
+  <meta property="og:image:alt" content="Lil Things. Small things. Big feelings.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Lil Things — Small things. Big feelings.">
-  <meta name="twitter:description" content="A shared home-screen widget for two people. Send little drawings and photos, react on the widget, and replay a drawing being made.">
+  <meta name="twitter:description" content="A Home Screen widget for the people you care about. Drawings replay beside your other apps.">
   <meta name="twitter:image" content="https://lilthings.app/assets/og.png">
-  <meta name="twitter:image:alt" content="Lil Things. Small things. Big feelings. A shared widget for two people.">
+  <meta name="twitter:image:alt" content="Lil Things. Small things. Big feelings.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="preload" href="/assets/fonts/nunito-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/nunito-500.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/screens/01-welcome.png" as="image">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <script type="application/ld+json">
   {
@@ -37,7 +36,9 @@
     "operatingSystem": "iOS 17 or later",
     "applicationCategory": "LifestyleApplication",
     "url": "https://lilthings.app/",
-    "description": "A shared home-screen widget for two people. Send little drawings and photos, react on the widget, and replay a drawing being made."
+    "description": "A Home Screen widget for the people you care about. Drawings replay beside your other apps.",
+    "author": { "@type": "Person", "name": "Eric Leino" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
   </script>
   <script>document.documentElement.classList.add("js");</script>
@@ -54,9 +55,9 @@
         <span class="nav-toggle-label">Menu</span>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Primary">
-        <a href="#how">How it works</a>
-        <a href="#features">Features</a>
-        <a href="#widget">Widget</a>
+        <a href="#people">For your people</a>
+        <a href="#followers">Followers</a>
+        <a href="#inside">Inside the app</a>
         <a href="#faq">FAQ</a>
       </nav>
     </div>
@@ -68,8 +69,7 @@
         <div class="hero-copy">
           <p class="script">a little more us.</p>
           <h1>Small things.<br>Big feelings.</h1>
-          <p class="lede">A home-screen widget you share with one person. Draw something little, send a photo, and leave it where their day starts.</p>
-          <!-- href is set from APP_STORE_URL in /assets/js/main.js -->
+          <p class="lede">Lil Things sits on your Home Screen, in with the rest of your day. A drawing plays itself on the widget, a reaction lands, and the next little thing finds you.</p>
           <a class="store-badge" data-store-link target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store (opens in a new tab)">
             <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="119.66407" height="40" viewBox="0 0 119.66407 40">
   <title>Download_on_the_App_Store_Badge_US-UK_RGB_blk_4SVG_092917</title>
@@ -118,31 +118,388 @@
   </g>
 </svg>
           </a>
-          <p class="fine">iPhone and iPad · iOS 17 or later</p>
+          <p class="fine">iPhone and iPad · iOS 17 or later · Free</p>
+          <button class="motion-toggle" type="button" aria-pressed="false">Pause animation</button>
         </div>
 
-        <div class="stage">
-          <figure class="shot">
-            <div class="phone float">
-              <img src="/assets/screens/01-welcome.png" width="1005" height="2185" alt="Lil Things welcome screen. A yellow smile sits above the words Small things. Big feelings, with Sign in with Apple at the bottom." fetchpriority="high">
+        <div class="hero-stage">
+          <p class="sr-only" id="hero-loop">On the sample Home Screen, a Lil Things widget draws a smile from Alex, a heart reaction appears, then a notification says Maya sent you a little thing and the widget draws a sun that says hi, sunshine. The loop repeats. Use Pause animation to stop it.</p>
+          <div class="iphone" aria-hidden="true">
+            <div class="screen">
+              <div class="wallpaper"></div>
+              <div class="island"></div>
+              <div class="statusbar">
+                <span>9:41</span>
+                <span class="sb-icons">
+                  <svg viewBox="0 0 17 12"><rect x="0" y="7" width="3" height="5" rx=".5" fill="currentColor"/><rect x="4.5" y="4.5" width="3" height="7.5" rx=".5" fill="currentColor"/><rect x="9" y="2" width="3" height="10" rx=".5" fill="currentColor"/><rect x="13.5" y="0" width="3" height="12" rx=".5" fill="currentColor" opacity=".35"/></svg>
+                  <svg viewBox="0 0 16 12"><path d="M8 9.6a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z" fill="currentColor"/><path d="M3.4 7.1a6.5 6.5 0 0 1 9.2 0M1 4.4a10 10 0 0 1 14 0" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+                  <svg viewBox="0 0 26 12"><rect x=".7" y=".7" width="21" height="10.6" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="2.2" y="2.2" width="15" height="7.6" rx="1" fill="currentColor"/><path d="M23.2 4.2h1.4a1 1 0 0 1 1 1v1.6a1 1 0 0 1-1 1h-1.4z" fill="currentColor"/></svg>
+                </span>
+              </div>
+              <div class="banner anim">
+                <img src="/favicon.svg" alt="">
+                <div>
+                  <strong>Lil Things</strong>
+                  <span>Maya sent you a little thing</span>
+                </div>
+              </div>
+              <div class="hs">
+                <div class="w-med">
+                  <div class="w-chrome">
+                    <span class="play"></span>
+                    <span class="ava-slot">
+                      <span class="ava ava-a anim">A</span>
+                      <span class="ava ava-b anim">M</span>
+                    </span>
+                    <span class="who">
+                      <span class="who-a anim">Alex</span>
+                      <span class="who-b anim">Maya</span>
+                    </span>
+                    <span class="play"></span>
+                  </div>
+                  <div class="canvas">
+                    <svg class="doodle" viewBox="0 0 160 118">
+                      <g class="draw-a">
+                        <circle class="eye k-eyes anim" cx="50" cy="36" r="5.4"/>
+                        <circle class="eye k-eyes anim" cx="110" cy="36" r="5.4"/>
+                        <path class="smile k-smile anim" pathLength="100" d="M32 54c12 38 84 38 96 0"/>
+                        <text class="words k-words anim" x="80" y="108">a little hello</text>
+                      </g>
+                      <g class="draw-b anim">
+                        <g class="rays">
+                          <path class="k-sun anim" pathLength="100" d="M80 4v14"/>
+                          <path class="k-sun anim" pathLength="100" d="M80 74v14"/>
+                          <path class="k-sun anim" pathLength="100" d="M48 46H34"/>
+                          <path class="k-sun anim" pathLength="100" d="M126 46h14"/>
+                          <path class="k-sun anim" pathLength="100" d="M57 23 47 13"/>
+                          <path class="k-sun anim" pathLength="100" d="M103 23l10-10"/>
+                          <path class="k-sun anim" pathLength="100" d="M57 69 47 79"/>
+                          <path class="k-sun anim" pathLength="100" d="M103 69l10 10"/>
+                        </g>
+                        <circle class="sun-face k-sun anim" cx="80" cy="46" r="22" pathLength="100"/>
+                        <circle class="eye k-beyes anim" cx="72" cy="44" r="2.5"/>
+                        <circle class="eye k-beyes anim" cx="88" cy="44" r="2.5"/>
+                        <path class="sun-smile k-sun anim" pathLength="100" d="M66 52c4 10 24 10 28 0"/>
+                        <text class="words k-bwords anim" x="80" y="108">hi, sunshine.</text>
+                        <path class="star k-star anim" d="M130 84l1.7 4.6 4.6 1.7-4.6 1.7-1.7 4.6-1.7-4.6-4.6-1.7 4.6-1.7z"/>
+                      </g>
+                    </svg>
+                    <span class="react-pop anim">❤️</span>
+                  </div>
+                  <div class="w-meta">
+                    <span>Our little corner</span>
+                    <span class="counts">❤️ <span class="count-stack"><span class="count-zero anim">0</span><span class="count-one anim">1</span></span> 😂 0 ✨ 0</span>
+                  </div>
+                </div>
+                <div class="icon-row">
+                  <div class="ico"><div class="squircle" style="background:#f6d5e2"><span class="glyph"></span></div><span class="ico-name">Bloom</span></div>
+                  <div class="ico"><div class="squircle" style="background:#d9e3f6"><span class="glyph ring"></span></div><span class="ico-name">Harbor</span></div>
+                  <div class="ico"><div class="squircle" style="background:#ead6f6"><span class="glyph pill"></span></div><span class="ico-name">Quilt</span></div>
+                  <div class="ico"><div class="squircle" style="background:#f3c7a5"><span class="glyph dot"></span></div><span class="ico-name">Maple</span></div>
+                </div>
+                <div class="split">
+                  <div class="w-sm">
+                    <div class="canvas">
+                      <svg class="doodle" viewBox="0 0 160 118">
+                        <g class="draw-a">
+                          <circle class="eye k-eyes anim" cx="50" cy="36" r="5.4"/>
+                          <circle class="eye k-eyes anim" cx="110" cy="36" r="5.4"/>
+                          <path class="smile k-smile anim" pathLength="100" d="M32 54c12 38 84 38 96 0"/>
+                          <text class="words k-words anim" x="80" y="108">a little hello</text>
+                        </g>
+                        <g class="draw-b anim">
+                          <g class="rays">
+                            <path class="k-sun anim" pathLength="100" d="M80 4v14"/>
+                            <path class="k-sun anim" pathLength="100" d="M80 74v14"/>
+                            <path class="k-sun anim" pathLength="100" d="M48 46H34"/>
+                            <path class="k-sun anim" pathLength="100" d="M126 46h14"/>
+                            <path class="k-sun anim" pathLength="100" d="M57 23 47 13"/>
+                            <path class="k-sun anim" pathLength="100" d="M103 23l10-10"/>
+                            <path class="k-sun anim" pathLength="100" d="M57 69 47 79"/>
+                            <path class="k-sun anim" pathLength="100" d="M103 69l10 10"/>
+                          </g>
+                          <circle class="sun-face k-sun anim" cx="80" cy="46" r="22" pathLength="100"/>
+                          <circle class="eye k-beyes anim" cx="72" cy="44" r="2.5"/>
+                          <circle class="eye k-beyes anim" cx="88" cy="44" r="2.5"/>
+                          <path class="sun-smile k-sun anim" pathLength="100" d="M66 52c4 10 24 10 28 0"/>
+                          <text class="words k-bwords anim" x="80" y="108">hi, sunshine.</text>
+                          <path class="star k-star anim" d="M130 84l1.7 4.6 4.6 1.7-4.6 1.7-1.7 4.6-1.7-4.6-4.6-1.7 4.6-1.7z"/>
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="icon-stack">
+                    <div class="icon-row cols-2">
+                      <div class="ico"><div class="squircle" style="background:#d7ead8"><span class="glyph"></span></div><span class="ico-name">Lumen</span></div>
+                      <div class="ico"><div class="squircle" style="background:#ffe59f"><span class="glyph ring"></span></div><span class="ico-name">Pebble</span></div>
+                    </div>
+                    <div class="icon-row cols-2">
+                      <div class="ico"><div class="squircle" style="background:#f6e3b4"><span class="glyph pill"></span></div><span class="ico-name">Drift</span></div>
+                      <div class="ico"><div class="squircle" style="background:#f6d5e2"><span class="glyph dot"></span></div><span class="ico-name">Kindred</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pages"><i class="on"></i><i></i></div>
+              <div class="dock">
+                <div class="ico"><div class="squircle" style="background:#ead6f6"><span class="glyph"></span></div></div>
+                <div class="ico"><div class="squircle" style="background:#d9e3f6"><span class="glyph ring"></span></div></div>
+                <div class="ico"><img class="app-mark" src="/favicon.svg" alt=""></div>
+                <div class="ico"><div class="squircle" style="background:#f3c7a5"><span class="glyph pill"></span></div></div>
+              </div>
+              <div class="homebar"></div>
             </div>
-            <figcaption>The welcome, on iPhone</figcaption>
-          </figure>
-          <div class="floater" aria-hidden="true">
-            <span class="floater-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#2E2E3A" stroke-width="1.8" stroke-linejoin="round">
-                <path d="M12 19s-6.2-4.1-6.2-8A3.5 3.5 0 0 1 12 8.2 3.5 3.5 0 0 1 18.2 11c0 3.9-6.2 8-6.2 8z"/>
-              </svg>
-            </span>
-            they loved it
           </div>
-          <svg class="spark one" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2l1.6 7.2L21 12l-7.4 1.6L12 22l-1.6-8.4L3 12l7.4-1.8L12 2z" fill="#2E2E3A"/>
-          </svg>
-          <svg class="spark two" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2l1.6 7.2L21 12l-7.4 1.6L12 22l-1.6-8.4L3 12l7.4-1.8L12 2z" fill="#2E2E3A"/>
-          </svg>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="people">
+      <div class="container">
+        <p class="kicker">Spaces</p>
+        <h2>For your people.</h2>
+        <p class="section-intro">A Space is private and invite-only. Just us is for two. The crew is for up to ten. Draw something, and it plays on their Home Screen. They can draw back.</p>
+        <div class="pair">
+          <figure class="device-block">
+            <div class="iphone" aria-hidden="true">
+              <div class="screen">
+                <div class="wallpaper"></div>
+                <div class="island"></div>
+                <div class="statusbar"><span>9:41</span></div>
+                <div class="hs">
+                  <div class="w-med">
+                    <div class="w-chrome">
+                      <span class="play"></span>
+                      <span class="ava pin">Y</span>
+                      <span>You</span>
+                    </div>
+                    <div class="canvas">
+                      <svg class="doodle" viewBox="0 0 160 118">
+                        <g class="pair-send anim">
+                          <circle class="eye steady" cx="50" cy="36" r="5.4"/>
+                          <circle class="eye steady" cx="110" cy="36" r="5.4"/>
+                          <path class="smile k-send anim" pathLength="100" d="M32 54c12 38 84 38 96 0"/>
+                          <text class="words k-send-words anim" x="80" y="108">a little hello</text>
+                        </g>
+                        <g class="pair-reply anim">
+                          <path class="heart k-reply anim" pathLength="100" d="M80 76c-2-14-22-18-28-6-4 8 0 16 8 24l20 18 20-18c8-8 12-16 8-24-6-12-26-8-28 6z"/>
+                          <text class="words" x="80" y="108">drew back</text>
+                        </g>
+                      </svg>
+                    </div>
+                    <div class="w-meta"><span>Our little corner</span></div>
+                  </div>
+                  <div class="icon-row">
+                    <div class="ico"><div class="squircle" style="background:#f6d5e2"><span class="glyph"></span></div><span class="ico-name">Bloom</span></div>
+                    <div class="ico"><div class="squircle" style="background:#ead6f6"><span class="glyph ring"></span></div><span class="ico-name">Quilt</span></div>
+                    <div class="ico"><div class="squircle" style="background:#ffe59f"><span class="glyph dot"></span></div><span class="ico-name">Pebble</span></div>
+                    <div class="ico"><div class="squircle" style="background:#d9e3f6"><span class="glyph pill"></span></div><span class="ico-name">Harbor</span></div>
+                  </div>
+                </div>
+                <div class="dock">
+                  <div class="ico"><div class="squircle" style="background:#ead6f6"><span class="glyph"></span></div></div>
+                  <div class="ico"><img class="app-mark" src="/favicon.svg" alt=""></div>
+                  <div class="ico"><div class="squircle" style="background:#f3c7a5"><span class="glyph ring"></span></div></div>
+                  <div class="ico"><div class="squircle" style="background:#d7ead8"><span class="glyph pill"></span></div></div>
+                </div>
+                <div class="homebar"></div>
+              </div>
+            </div>
+            <figcaption>Your Home Screen</figcaption>
+          </figure>
+          <p class="pair-note">You draw it. It plays on their widget. They draw back.</p>
+          <figure class="device-block">
+            <div class="iphone" aria-hidden="true">
+              <div class="screen">
+                <div class="wallpaper"></div>
+                <div class="island"></div>
+                <div class="statusbar"><span>9:41</span></div>
+                <div class="hs">
+                  <div class="w-med">
+                    <div class="w-chrome">
+                      <span class="play"></span>
+                      <span class="ava pin">Y</span>
+                      <span>You</span>
+                    </div>
+                    <div class="canvas">
+                      <svg class="doodle" viewBox="0 0 160 118">
+                        <circle class="eye k-recv-eye anim" cx="50" cy="36" r="5.4"/>
+                        <circle class="eye k-recv-eye anim" cx="110" cy="36" r="5.4"/>
+                        <path class="smile k-recv anim" pathLength="100" d="M32 54c12 38 84 38 96 0"/>
+                        <text class="words k-recv-words anim" x="80" y="108">a little hello</text>
+                      </svg>
+                      <span class="drawback anim">Draw back</span>
+                    </div>
+                    <div class="w-meta"><span>Our little corner</span></div>
+                  </div>
+                  <div class="icon-row">
+                    <div class="ico"><div class="squircle" style="background:#d9e3f6"><span class="glyph ring"></span></div><span class="ico-name">Harbor</span></div>
+                    <div class="ico"><div class="squircle" style="background:#f6e3b4"><span class="glyph"></span></div><span class="ico-name">Drift</span></div>
+                    <div class="ico"><div class="squircle" style="background:#ead6f6"><span class="glyph pill"></span></div><span class="ico-name">Quilt</span></div>
+                    <div class="ico"><div class="squircle" style="background:#f6d5e2"><span class="glyph dot"></span></div><span class="ico-name">Bloom</span></div>
+                  </div>
+                </div>
+                <div class="dock">
+                  <div class="ico"><div class="squircle" style="background:#ffe59f"><span class="glyph"></span></div></div>
+                  <div class="ico"><div class="squircle" style="background:#d9e3f6"><span class="glyph ring"></span></div></div>
+                  <div class="ico"><img class="app-mark" src="/favicon.svg" alt=""></div>
+                  <div class="ico"><div class="squircle" style="background:#f3c7a5"><span class="glyph pill"></span></div></div>
+                </div>
+                <div class="homebar"></div>
+              </div>
+            </div>
+            <figcaption>Their Home Screen</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="followers">
+      <div class="container">
+        <p class="kicker">Broadcast</p>
+        <h2>For your followers.</h2>
+        <p class="section-intro">Share one doodle and it can land on the widgets of the people who follow you, all at once. Followers are people in Lil Things, not a public feed.</p>
+        <div class="fan" aria-hidden="true">
+          <article class="mini m1 anim" style="--tx:80%;--ty:70%;--i:1">
+            <header><span class="dot">J</span> Jules</header>
+            <div class="mini-canvas"><svg class="doodle" viewBox="0 0 160 110"><circle class="eye steady" cx="52" cy="40" r="5"/><circle class="eye steady" cx="108" cy="40" r="5"/><path class="smile k-fan anim" pathLength="100" d="M36 56c12 34 76 34 88 0"/></svg></div>
+          </article>
+          <article class="mini m2 anim" style="--tx:0%;--ty:80%;--i:2">
+            <header><span class="dot">S</span> Sam</header>
+            <div class="mini-canvas"><svg class="doodle" viewBox="0 0 160 110"><circle class="eye steady" cx="52" cy="40" r="5"/><circle class="eye steady" cx="108" cy="40" r="5"/><path class="smile k-fan anim" pathLength="100" d="M36 56c12 34 76 34 88 0"/></svg></div>
+          </article>
+          <article class="mini m3 anim" style="--tx:-80%;--ty:70%;--i:3">
+            <header><span class="dot">N</span> Noor</header>
+            <div class="mini-canvas"><svg class="doodle" viewBox="0 0 160 110"><circle class="eye steady" cx="52" cy="40" r="5"/><circle class="eye steady" cx="108" cy="40" r="5"/><path class="smile k-fan anim" pathLength="100" d="M36 56c12 34 76 34 88 0"/></svg></div>
+          </article>
+          <article class="mini m4 anim" style="--tx:90%;--ty:0%;--i:4">
+            <header><span class="dot">A</span> Ari</header>
+            <div class="mini-canvas"><svg class="doodle" viewBox="0 0 160 110"><circle class="eye steady" cx="52" cy="40" r="5"/><circle class="eye steady" cx="108" cy="40" r="5"/><path class="smile k-fan anim" pathLength="100" d="M36 56c12 34 76 34 88 0"/></svg></div>
+          </article>
+          <div class="source">
+            <div class="w-med">
+              <div class="w-chrome">
+                <span class="play"></span>
+                <span class="ava pin" style="background:#f6d5e2">M</span>
+                <span>Maya</span>
+              </div>
+              <div class="canvas">
+                <svg class="doodle" viewBox="0 0 160 118">
+                  <circle class="eye steady" cx="50" cy="36" r="5.4"/>
+                  <circle class="eye steady" cx="110" cy="36" r="5.4"/>
+                  <path class="smile k-fan anim" pathLength="100" d="M32 54c12 38 84 38 96 0"/>
+                  <text class="words steady-words" x="80" y="108">for you</text>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <article class="mini m5 anim" style="--tx:-90%;--ty:0%;--i:5">
+            <header><span class="dot">K</span> Ken</header>
+            <div class="mini-canvas"><svg class="doodle" viewBox="0 0 160 110"><circle class="eye steady" cx="52" cy="40" r="5"/><circle class="eye steady" cx="108" cy="40" r="5"/><path class="smile k-fan anim" pathLength="100" d="M36 56c12 34 76 34 88 0"/></svg></div>
+          </article>
+          <article class="mini m6 anim" style="--tx:80%;--ty:-70%;--i:6">
+            <header><span class="dot">S</span> Sol</header>
+            <div class="mini-canvas"><svg class="doodle" viewBox="0 0 160 110"><circle class="eye steady" cx="52" cy="40" r="5"/><circle class="eye steady" cx="108" cy="40" r="5"/><path class="smile k-fan anim" pathLength="100" d="M36 56c12 34 76 34 88 0"/></svg></div>
+          </article>
+          <article class="mini m7 anim" style="--tx:0%;--ty:-80%;--i:7">
+            <header><span class="dot">B</span> Bea</header>
+            <div class="mini-canvas"><svg class="doodle" viewBox="0 0 160 110"><circle class="eye steady" cx="52" cy="40" r="5"/><circle class="eye steady" cx="108" cy="40" r="5"/><path class="smile k-fan anim" pathLength="100" d="M36 56c12 34 76 34 88 0"/></svg></div>
+          </article>
+          <article class="mini m8 anim" style="--tx:-80%;--ty:-70%;--i:8">
+            <header><span class="dot">O</span> Otis</header>
+            <div class="mini-canvas"><svg class="doodle" viewBox="0 0 160 110"><circle class="eye steady" cx="52" cy="40" r="5"/><circle class="eye steady" cx="108" cy="40" r="5"/><path class="smile k-fan anim" pathLength="100" d="M36 56c12 34 76 34 88 0"/></svg></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="lock">
+      <div class="container lock-layout">
+        <div>
+          <p class="kicker">Lock screen</p>
+          <h2>A little tap, then back to the widget.</h2>
+          <p class="section-intro">When someone sends a little thing, Lil Things can notify you. That note can show on the lock screen. It is a notification. The drawing itself waits on your Home Screen widget.</p>
+        </div>
+        <div class="iphone" aria-hidden="true">
+          <div class="screen">
+            <div class="wallpaper dim"></div>
+            <div class="island"></div>
+            <p class="lock-date">Monday, October 19</p>
+            <p class="lock-time">9:41</p>
+            <div class="lock-note anim">
+              <img src="/favicon.svg" alt="">
+              <div>
+                <div class="ln-top"><strong>Lil Things</strong><span>now</span></div>
+                <p>Maya sent you a little thing</p>
+              </div>
+            </div>
+            <div class="homebar light"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="inside">
+      <div class="container">
+        <p class="kicker">Inside the app</p>
+        <h2>The real thing.</h2>
+        <p class="section-intro">Spaces, playback, and the widget, from the app itself. Swipe sideways for the rest.</p>
+        <div class="strip-wrap">
+          <div class="strip" tabindex="0" aria-label="Screenshots from Lil Things">
+            <figure>
+              <div class="bezel">
+                <picture>
+                  <source srcset="/assets/screens/spaces.webp" type="image/webp">
+                  <img src="/assets/screens/spaces.png" width="460" height="1000" alt="Spaces list titled Your little spaces, with a space called Our little corner and a sun drawing that says hi, sunshine." loading="lazy" decoding="async">
+                </picture>
+              </div>
+              <figcaption>Your little spaces</figcaption>
+            </figure>
+            <figure>
+              <div class="bezel">
+                <picture>
+                  <source srcset="/assets/screens/detail.webp" type="image/webp">
+                  <img src="/assets/screens/detail.png" width="460" height="1000" alt="A space called Our little corner, with the latest drawing, a Draw back button, and Made this for you." loading="lazy" decoding="async">
+                </picture>
+              </div>
+              <figcaption>Watch it happen, then draw back</figcaption>
+            </figure>
+            <figure>
+              <div class="bezel">
+                <picture>
+                  <source srcset="/assets/screens/playback.webp" type="image/webp">
+                  <img src="/assets/screens/playback.png" width="460" height="1000" alt="Playback of a smile and the words a little hello, with a replay control and heart, laugh, and sparkle reactions." loading="lazy" decoding="async">
+                </picture>
+              </div>
+              <figcaption>A little moment, kept</figcaption>
+            </figure>
+            <figure>
+              <div class="bezel">
+                <picture>
+                  <source srcset="/assets/screens/create.webp" type="image/webp">
+                  <img src="/assets/screens/create.png" width="460" height="1000" alt="Create a Space screen offering Just us for two people or The crew for up to ten, named Our little corner, marked private and invite-only." loading="lazy" decoding="async">
+                </picture>
+              </div>
+              <figcaption>Make a Space</figcaption>
+            </figure>
+            <figure>
+              <div class="bezel">
+                <picture>
+                  <source srcset="/assets/screens/widget-preview.webp" type="image/webp">
+                  <img src="/assets/screens/widget-preview.png" width="460" height="1000" alt="Widget preview with incoming and sent drawings, reaction counts, and replay frames of a smile." loading="lazy" decoding="async">
+                </picture>
+              </div>
+              <figcaption>On the Home Screen</figcaption>
+            </figure>
+          </div>
+        </div>
+        <figure class="sheet">
+          <picture>
+            <source srcset="/assets/screens/replay-sheet.webp" type="image/webp">
+            <img src="/assets/screens/replay-sheet.png" width="1200" height="1490" alt="A contact sheet of iPhones showing a smile drawn stroke by stroke until it becomes a sun that says hi, sunshine." loading="lazy" decoding="async">
+          </picture>
+          <figcaption>Frame by frame, the way a drawing plays back.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -150,210 +507,23 @@
       <div class="container">
         <p class="kicker">How it works</p>
         <h2>Three small steps.</h2>
-        <p class="section-intro">That’s the whole idea. A Space, a little thing, and a widget.</p>
-        <div class="how-layout">
-          <ol class="steps">
-            <li class="step">
-              <span class="step-num" aria-hidden="true">01</span>
-              <h3>Open a Space</h3>
-              <p>Invite one person. A Space is just the two of you — your corner, with nobody else in it.</p>
-            </li>
-            <li class="step">
-              <span class="step-num" aria-hidden="true">02</span>
-              <h3>Leave something little</h3>
-              <p>A drawing, a photo, a note in your handwriting. It does not have to be good. It has to be from you.</p>
-            </li>
-            <li class="step">
-              <span class="step-num" aria-hidden="true">03</span>
-              <h3>Let them find it</h3>
-              <p>It shows up on their widget. They can react right there, or watch the drawing appear, stroke by stroke.</p>
-            </li>
-          </ol>
-          <figure class="shot">
-            <div class="phone">
-              <img src="/assets/screens/02-welcome-replay.png" width="1005" height="2185" alt="Lil Things screen titled Watch it happen, explaining that you can replay a drawing as it was made." loading="lazy" decoding="async">
-            </div>
-            <figcaption>Watch it happen</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="features">
-      <div class="container">
-        <p class="kicker">In the app</p>
-        <h2>Little on purpose.</h2>
-        <p class="section-intro">The app stays small, so the feeling doesn’t.</p>
-        <div class="features">
-          <article class="feature">
-            <div>
-              <p class="kicker">Spaces</p>
-              <h3>A corner for two</h3>
-              <p>Each Space is shared by two people. Name it, keep your things there, and leave the rest of the internet outside.</p>
-            </div>
-            <figure class="shot">
-              <div class="phone">
-                <img src="/assets/screens/04-spaces.png" width="1005" height="2185" alt="Spaces screen titled Your little spaces, with a shared space called Our little corner and a yellow drawing that says hi, sunshine." loading="lazy" decoding="async">
-              </div>
-              <figcaption>Your little spaces</figcaption>
-            </figure>
-          </article>
-
-          <article class="feature reverse">
-            <div>
-              <p class="kicker">Watch it happen</p>
-              <h3>See it being made</h3>
-              <p>A drawing can replay the way it was made. Every stroke, in order. It feels like standing next to someone while they draw it for you.</p>
-            </div>
-            <figure class="shot">
-              <div class="phone">
-                <img src="/assets/screens/05-detail.png" width="1005" height="2185" alt="A shared sun drawing that says hi, sunshine, open in a Space, with Watch it happen and reaction buttons." loading="lazy" decoding="async">
-              </div>
-              <figcaption>A thing, opened</figcaption>
-            </figure>
-          </article>
-
-          <article class="feature">
-            <div>
-              <p class="kicker">On the widget</p>
-              <h3>A tap, not a chat</h3>
-              <p>Love, a hug, a sparkle, a smile. On the widget, so you can answer without opening a thread.</p>
-            </div>
-            <figure class="shot">
-              <div class="phone">
-                <img src="/assets/screens/03-welcome-widget.png" width="1005" height="2185" alt="Lil Things screen titled Leave a little reaction, showing love, hug, sparkle, and smile." loading="lazy" decoding="async">
-              </div>
-              <figcaption>Reactions, explained</figcaption>
-            </figure>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section widget-section" id="widget">
-      <div class="container">
-        <div class="widget-layout">
-          <div>
-            <p class="kicker">The widget</p>
-            <h2>On the home screen, where the morning starts.</h2>
-            <p class="section-intro">The widget is the point. A little drawing waiting there, in a size that fits the day. Reactions sit on it, so “I saw this” is one tap.</p>
-            <ul class="pills">
-              <li>Small</li>
-              <li>Medium</li>
-              <li>Large</li>
-            </ul>
-          </div>
-          <div class="widget-demo">
-            <div class="widget">
-              <div class="widget-top">
-                <span class="ava" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="#2E2E3A" stroke-width="1.7" stroke-linejoin="round">
-                    <path d="M12 3l1.3 6.1L20 12l-6.7 1.3L12 21l-1.3-7.7L4 12l6.7-1.9L12 3z"/>
-                  </svg>
-                </span>
-                <div>
-                  <p class="widget-title">Made this for you
-                    <svg class="mini-sun" viewBox="0 0 24 24" aria-hidden="true">
-                      <circle cx="12" cy="12" r="4" fill="none" stroke="#2E2E3A" stroke-width="1.7"/>
-                      <path d="M12 3v2.2M12 18.8V21M3 12h2.2M18.8 12H21M6 6l1.6 1.6M16.4 16.4 18 18M18 6l-1.6 1.6M7.6 16.4 6 18" fill="none" stroke="#2E2E3A" stroke-width="1.7" stroke-linecap="round"/>
-                    </svg>
-                  </p>
-                  <p class="widget-sub">A little something for you</p>
-                </div>
-                <span class="wave" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="#2E2E3A">
-                    <rect x="4" y="10" width="2.2" height="6" rx="1"/>
-                    <rect x="8.4" y="7" width="2.2" height="12" rx="1"/>
-                    <rect x="12.8" y="9" width="2.2" height="8" rx="1"/>
-                    <rect x="17.2" y="6" width="2.2" height="10" rx="1"/>
-                  </svg>
-                </span>
-              </div>
-              <div class="widget-art">
-                <svg class="sun" viewBox="0 0 160 160" aria-hidden="true">
-                  <g class="rays" fill="none" stroke="#2E2E3A" stroke-width="6" stroke-linecap="round">
-                    <path d="M80 12v18M80 130v18M12 80h18M130 80h18"/>
-                    <path d="M32 32l13 13M115 115l13 13M128 32l-13 13M45 115l-13 13"/>
-                  </g>
-                  <circle cx="80" cy="80" r="34" fill="none" stroke="#2E2E3A" stroke-width="6"/>
-                  <ellipse cx="68" cy="76" rx="4" ry="6" fill="#2E2E3A"/>
-                  <ellipse cx="92" cy="76" rx="4" ry="6" fill="#2E2E3A"/>
-                  <path class="smile" pathLength="100" d="M62 90c6 16 30 16 36 0" fill="none" stroke="#2E2E3A" stroke-width="6" stroke-linecap="round"/>
-                </svg>
-                <p class="hi">hi, sunshine.</p>
-                <svg class="art-spark a" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 2l1.5 6.8L21 12l-7.5 1.5L12 22l-1.5-8.5L3 12l7.5-1.8L12 2z" fill="#2E2E3A"/>
-                </svg>
-                <svg class="art-spark b" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 2l1.5 6.8L21 12l-7.5 1.5L12 22l-1.5-8.5L3 12l7.5-1.8L12 2z" fill="#C9A227"/>
-                </svg>
-              </div>
-              <div class="reacts" role="group" aria-label="Reactions on the widget">
-                <button type="button" aria-pressed="false" aria-label="Love" data-sent="A little love, on its way.">
-                  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
-                    <path d="M12 19s-6.2-4.1-6.2-8A3.5 3.5 0 0 1 12 8.2 3.5 3.5 0 0 1 18.2 11c0 3.9-6.2 8-6.2 8z"/>
-                  </svg>
-                </button>
-                <button type="button" aria-pressed="false" aria-label="Hug" data-sent="A hug, on its way.">
-                  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-                    <circle cx="12" cy="7.2" r="2.1"/>
-                    <path d="M8.2 13.2c.2-2.4 1.4-3.8 3.8-3.8s3.6 1.4 3.8 3.8"/>
-                    <path d="M4.2 12.5c1.8.8 2.8 2.4 2.8 4.4M19.8 12.5c-1.8.8-2.8 2.4-2.8 4.4"/>
-                  </svg>
-                </button>
-                <button type="button" aria-pressed="false" aria-label="Sparkle" data-sent="A sparkle, on its way.">
-                  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
-                    <path d="M12 3.2 13.4 9.4 19.8 12 13.4 14.6 12 20.8 10.6 14.6 4.2 12 10.6 9.4 12 3.2z"/>
-                  </svg>
-                </button>
-                <button type="button" aria-pressed="false" aria-label="Smile" data-sent="A smile, on its way.">
-                  <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
-                    <circle cx="12" cy="12" r="7"/>
-                    <circle cx="9.4" cy="11" r="0.8" fill="currentColor" stroke="none"/>
-                    <circle cx="14.6" cy="11" r="0.8" fill="currentColor" stroke="none"/>
-                    <path d="M9 14.2c1 1.5 5 1.5 6 0"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <p class="react-status" id="react-status" aria-live="polite">Tap a reaction. It stays on the widget.</p>
-          </div>
-        </div>
-
-        <div class="guide">
-          <div>
-            <h3>Put it on your Home Screen</h3>
-            <p>Touch and hold the Home Screen, tap Edit, then Add Widget. Search for Lil Things, pick a size, and choose the Space.</p>
-          </div>
-          <figure class="shot">
-            <div class="phone">
-              <img src="/assets/screens/09-widgetguide.png" width="1005" height="2185" alt="Instructions for adding the Lil Things widget, with small, medium, and large previews on a home screen." loading="lazy" decoding="async">
-            </div>
-            <figcaption>Small, medium, large</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="you">
-      <div class="container you-layout">
-        <div>
-          <p class="kicker">You</p>
-          <h2>So they know it’s you.</h2>
-          <p class="section-intro">A photo, a display name, and a color. Quiet hours, for when you’d like the little things to wait until morning. Sign in with Apple, and that’s the account.</p>
-          <ul class="ticks">
-            <li>A photo and a display name</li>
-            <li>An accent color</li>
-            <li>Quiet hours</li>
-            <li>Sign in with Apple</li>
-          </ul>
-        </div>
-        <figure class="shot">
-          <div class="phone">
-            <img src="/assets/screens/07-profile.png" width="1005" height="2185" alt="Profile screen with a photo, display name, accent colors, quiet hours, and Sign in with Apple." loading="lazy" decoding="async">
-          </div>
-          <figcaption>Your profile</figcaption>
-        </figure>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">01</span>
+            <h3>Make a Space</h3>
+            <p>Just us, or a crew of up to ten. Private, and always invite-only. Or follow someone whose doodles you want on your widget.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">02</span>
+            <h3>Draw a little thing</h3>
+            <p>A thick, friendly line. In the app it replays stroke by stroke. Photos stay photos. A note can ride along.</p>
+          </li>
+          <li class="step">
+            <span class="step-num">03</span>
+            <h3>It lands on their widget</h3>
+            <p>Small, medium, or large, on the Home Screen. They can react, or draw back. A notification can tell them it arrived.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -363,60 +533,36 @@
         <h2>Questions, answered gently.</h2>
         <div class="faq">
           <details>
-            <summary>
-              <h3>What is Lil Things?</h3>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </summary>
-            <p>A shared home-screen widget for two people. You send little drawings and photos into a Space, and they show up on each other’s phone.</p>
+            <summary><h3>What is Lil Things?</h3><span class="faq-icon" aria-hidden="true"></span></summary>
+            <p>A Home Screen widget for people you care about. You send little drawings, photos, and notes into a Space, or share a doodle with followers. It shows up on their phone, in with their other apps.</p>
           </details>
           <details>
-            <summary>
-              <h3>Who is a Space for?</h3>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </summary>
-            <p>Two people. A partner, a friend, someone you like to send small things to. You can keep more than one Space.</p>
+            <summary><h3>Who is a Space for?</h3><span class="faq-icon" aria-hidden="true"></span></summary>
+            <p>Just us is a space for two. The crew is up to ten. Spaces are private and invite-only. Followers are separate: people who follow you can receive a doodle you share with them.</p>
           </details>
           <details>
-            <summary>
-              <h3>Which phones and tablets?</h3>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </summary>
-            <p>iPhone and iPad, on iOS 17 or later. Both of you need the app.</p>
+            <summary><h3>Which phones and tablets?</h3><span class="faq-icon" aria-hidden="true"></span></summary>
+            <p>iPhone and iPad, on iOS 17 or later. Everyone you’re sharing with needs the app. It’s free, and you sign in with Apple.</p>
           </details>
           <details>
-            <summary>
-              <h3>What is Watch It Happen?</h3>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </summary>
-            <p>It’s a replay of a drawing, stroke by stroke, in the order it was made. Photos stay as photos.</p>
+            <summary><h3>What is Watch It Happen?</h3><span class="faq-icon" aria-hidden="true"></span></summary>
+            <p>A replay of a drawing, stroke by stroke, in the order it was made. The widget can step through those frames. Open the app for the full playback. Photos stay as photos.</p>
           </details>
           <details>
-            <summary>
-              <h3>How do reactions work?</h3>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </summary>
-            <p>You can leave a heart, a hug, a sparkle, or a smile on the widget, or on the thing they sent. It’s a small way to say you saw it.</p>
+            <summary><h3>How do reactions and Draw back work?</h3><span class="faq-icon" aria-hidden="true"></span></summary>
+            <p>A heart, a laugh, or a sparkle can land on the widget. Draw back sends a drawing in return, and that reply can play on their widget too.</p>
           </details>
           <details>
-            <summary>
-              <h3>What happens to my drawings and photos?</h3>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </summary>
-            <p>They’re stored so you can share them with the people in your Spaces, including on the widget. Sign in is with Apple. There are no ads, and we don’t sell your data. The <a href="/privacy.html">privacy policy</a> has the rest.</p>
+            <summary><h3>Is there a lock screen widget?</h3><span class="faq-icon" aria-hidden="true"></span></summary>
+            <p>No. Lil Things widgets are for the Home Screen, in small, medium, and large. A push notification can appear on the lock screen when someone sends you something.</p>
           </details>
           <details>
-            <summary>
-              <h3>How do I add the widget?</h3>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </summary>
-            <p>Touch and hold the Home Screen, tap Edit, then Add Widget, and search for Lil Things.</p>
+            <summary><h3>What happens to my drawings and photos?</h3><span class="faq-icon" aria-hidden="true"></span></summary>
+            <p>They’re stored so you can share them with the people you meant to reach. Sign in is with Apple. There are no ads, and we don’t sell your data. The <a href="/privacy.html">privacy policy</a>, <a href="/terms.html">terms</a>, and <a href="/community-guidelines.html">community guidelines</a> have the rest.</p>
           </details>
           <details>
-            <summary>
-              <h3>How do I get help?</h3>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </summary>
-            <p>Write to <a href="mailto:support@lilthings.app">support@lilthings.app</a>, or visit the <a href="/support.html">support page</a>.</p>
+            <summary><h3>How do I add the widget?</h3><span class="faq-icon" aria-hidden="true"></span></summary>
+            <p>Touch and hold the Home Screen, tap Edit, then Add Widget, and search for Lil Things. Pin the Space you want that widget to keep showing. The <a href="/support.html">support page</a> walks through it.</p>
           </details>
         </div>
       </div>
@@ -448,12 +594,14 @@
           <span class="script">a little more us.</span>
         </div>
         <nav class="footer-nav" aria-label="Footer">
-          <a href="/privacy.html">Privacy Policy</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
+          <a href="/community-guidelines.html">Community Guidelines</a>
           <a href="/support.html">Support</a>
           <a href="mailto:support@lilthings.app">support@lilthings.app</a>
         </nav>
       </div>
-      <p class="copyright">© 2026 Lil Things</p>
+      <p class="copyright">© 2026 Eric Leino</p>
       <p class="legal">Apple, the Apple logo, iPhone, and iPad are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc. iOS is a trademark or registered trademark of Cisco in the U.S. and other countries and is used under license.</p>
     </div>
   </footer>
