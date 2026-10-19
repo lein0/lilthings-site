@@ -36,6 +36,7 @@
 
     if (!email || email.length > 254 || !EMAIL_RE.test(email)) {
       input.setAttribute("aria-invalid", "true");
+      window.ltTrack && window.ltTrack("waitlist_submit", { result: "error", reason: "client_invalid" });
       setStatus("That email doesn’t look quite right. Mind checking it?", "error");
       input.focus();
       return;
@@ -68,10 +69,12 @@
         }),
       });
       if (res.ok) {
+        window.ltTrack && window.ltTrack("waitlist_submit", { result: "success" });
         done();
         return;
       }
       const body = await res.json().catch(() => ({}));
+      window.ltTrack && window.ltTrack("waitlist_submit", { result: "error", reason: (body && body.message) || ("http_" + res.status) });
       if (body && body.message === "invalid_email") {
         input.setAttribute("aria-invalid", "true");
         setStatus("That email doesn’t look quite right. Mind checking it?", "error");
@@ -79,6 +82,7 @@
         setStatus("Something went sideways. Please try again in a moment.", "error");
       }
     } catch (_) {
+      window.ltTrack && window.ltTrack("waitlist_submit", { result: "error", reason: "network" });
       setStatus("Couldn’t reach the server. Check your connection and try again.", "error");
     }
     form.classList.remove("is-busy");

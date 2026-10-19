@@ -23,6 +23,7 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <script>document.documentElement.classList.add("js");</script>
+  <script src="/assets/js/analytics.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
@@ -123,6 +124,8 @@
       <ul>
         <li><strong>Supabase</strong> hosts the app’s database, stored files, and related backend. Account data and content are stored there.</li>
         <li><strong>Apple</strong> provides Sign in with Apple, the App Store, and Apple Push Notification service (APNs). Apple processes your Apple ID under its own terms. We send APNs a device token and the notification payload needed to deliver a notification.</li>
+        <li><strong>PostHog</strong> receives product usage events from the app (for example, that a drawing was sent or a widget was added), linked to a random account ID, never your name, email, or drawings. You can turn this off in the app under Settings → Share usage analytics. On the website it counts page visits and waitlist signups without cookies and without your email address.</li>
+        <li><strong>Sentry</strong> receives crash reports and performance diagnostics from the app (device model, OS version, app version, and what the app was doing when it crashed), linked to a random account ID.</li>
         <li><strong>GitHub Pages</strong> hosts this website. It does not receive your Lil Things account. Like most hosts, it may keep standard server logs of visits to lilthings.app.</li>
       </ul>
       <p>People you share with can see what you send them. Spaces are invite-only and can include more than two people. Only the people in a Space can see what is sent there. A public profile is optional. If you turn one on, drawings you broadcast are visible to your followers. We do not publish a Space on the open web.</p>
@@ -184,7 +187,7 @@
       <p>Where the GDPR or UK GDPR requires a transfer tool, we use an appropriate safeguard, such as the European Commission’s Standard Contractual Clauses or the UK international data transfer addendum, or we rely on an adequacy decision when one applies to the recipient. You can ask us for a copy of the relevant safeguard by emailing <a href="mailto:support@lilthings.app">support@lilthings.app</a>.</p>
 
       <h2 id="tracking">Cookies and Do Not Track</h2>
-      <p>The website is static. We do not set our own cookies, and we do not use analytics or advertising cookies. We do not track you across other sites or apps. A Do Not Track or global privacy control signal does not change the site’s behavior, because there is no tracking to turn off. The iOS app does not use IDFA and does not ask to track you across other companies’ apps and websites.</p>
+      <p>The website is static. We do not set cookies, and we do not use analytics or advertising cookies. We measure visits with cookieless analytics that keep nothing on your device. We do not track you across other sites or apps. A Do Not Track or global privacy control signal does not change the site’s behavior, because there is no cross-site tracking to turn off. The iOS app does not use IDFA and does not ask to track you across other companies’ apps and websites.</p>
 
       <h2 id="changes">Changes</h2>
       <p>If this policy changes, we will post the new version on this page and change the effective date. If a change is material, we will also give notice in the app or by email when we have an email for the account. The version that applies is the one posted on the date you use Lil Things.</p>

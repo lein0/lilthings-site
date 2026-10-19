@@ -208,7 +208,7 @@
     if (reduce.matches) { still(); return; }
     widget.classList.remove("is-still");
     if ("IntersectionObserver" in window) {
-      new IntersectionObserver((es) => { visible = es[0].isIntersecting; kick(); }, { threshold: 0.05 }).observe(widget);
+      new IntersectionObserver((es) => { visible = es[0].isIntersecting; if (visible && !window.__ltAnimSeen) { window.__ltAnimSeen = true; window.ltTrack && window.ltTrack("animation_in_view", {}); } kick(); }, { threshold: 0.05 }).observe(widget);
     }
     document.addEventListener("visibilitychange", kick);
     kick();
