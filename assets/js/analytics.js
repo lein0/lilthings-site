@@ -1,15 +1,25 @@
 /* Lil Things site analytics (PostHog, cookieless).
-   Disabled until POSTHOG_KEY is set. The project key is a public client key.
+   The project key is a public client key.
    memory persistence: no cookies, no localStorage, no cross-site tracking.
-   Never send email addresses or other personal data. */
+   Never send email addresses or other personal data.
+   Every event is tagged with the super property environment: "web". */
 (() => {
-  const POSTHOG_KEY = "";                       // phc_... (public project key)
+  const POSTHOG_KEY = "phc_zGB7KzxEjoBt9GzAn4AVVtHnhTnYFeM2UhzXBAHHjP2F";
   const POSTHOG_HOST = "https://us.i.posthog.com";
+  const EMAIL_RE = /[^\s@"'<>]+@[^\s@"'<>]+\.[^\s@"'<>]+/g;
+  const redact = (value) => (typeof value === "string" ? value.replace(EMAIL_RE, "[redacted]") : value);
+  const scrub = (props) => {
+    const out = {};
+    if (!props) return out;
+    for (const key of Object.keys(props)) out[key] = redact(props[key]);
+    return out;
+  };
   const queue = [];
   window.ltTrack = (event, props) => {
     if (!POSTHOG_KEY) return;
-    if (window.posthog && window.posthog.__loaded) window.posthog.capture(event, props || {});
-    else queue.push([event, props || {}]);
+    const safe = scrub(props);
+    if (window.posthog && window.posthog.__loaded) window.posthog.capture(event, safe);
+    else queue.push([event, safe]);
   };
   if (!POSTHOG_KEY) return;
   const s = document.createElement("script");
@@ -27,7 +37,20 @@
       mask_all_text: true,
       mask_all_element_attributes: true,
       ip: false,
-      loaded: (ph) => { ph.__loaded = true; queue.splice(0).forEach(([e, p]) => ph.capture(e, p)); },
+      before_send: (event) => {
+        if (!event) return event;
+        for (const bag of [event.properties, event.$set, event.$set_once]) {
+          if (!bag) continue;
+          for (const key of Object.keys(bag)) bag[key] = redact(bag[key]);
+        }
+        if (event.properties) event.properties.environment = "web";
+        return event;
+      },
+      loaded: (ph) => {
+        ph.register({ environment: "web" });
+        ph.__loaded = true;
+        queue.splice(0).forEach(([e, p]) => ph.capture(e, p));
+      },
     });
   };
   document.head.appendChild(s);
@@ -36,8 +59,8 @@
     if (!a) return;
     try {
       const u = new URL(a.href, location.href);
-      if (u.hostname !== location.hostname) window.ltTrack("outbound_click", { host: u.hostname, path: u.pathname });
-      else if (u.protocol === "mailto:") window.ltTrack("mailto_click", {});
+      if (u.protocol === "mailto:") window.ltTrack("mailto_click", {});
+      else if (u.hostname !== location.hostname) window.ltTrack("outbound_click", { host: u.hostname, path: u.pathname });
     } catch (_) {}
   }, true);
 })();
