@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Someone sent you a little thing</title>
+<meta name="description" content="A private note, drawn for you." />
+<meta property="og:title" content="Someone sent you a little thing" />
+<meta property="og:description" content="A private note, drawn for you." />
+<meta property="og:image" content="https://lilthings.app/og-invite.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="1200" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Someone sent you a little thing" />
+<meta name="twitter:image" content="https://lilthings.app/og-invite.png" />
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #fff3e8; color: #2e2e3a; font-family: "Avenir Next", Nunito, sans-serif; }
+  main { width: min(440px, calc(100% - 32px)); padding: 28px 0 40px; }
+  h1 { font-size: 1.7rem; line-height: 1.15; margin: 18px 0 8px; }
+  p { margin: 0 0 18px; line-height: 1.4; }
+  .frame { background: #fffaf2; border-radius: 28px; padding: 16px; }
+  img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 18px; background: #ffe9a8; display: block; }
+  button { width: 100%; min-height: 52px; border: 0; border-radius: 16px; background: #2e2e3a; color: #fff3e8; font: inherit; font-weight: 700; }
+</style>
+</head>
+<body>
+<main>
+  <div class="frame"><img id="poster" src="/og-invite.png" alt="" /></div>
+  <h1 id="title">Someone sent you a little thing</h1>
+  <p id="detail">A private note, drawn for you. The animated preview appears once the join page is served by the Worker.</p>
+  <button id="open" type="button">Get Lil Things</button>
+</main>
+<script>
+  const supabase = "https://ixkwmdgjfkoxrrakizcw.supabase.co";
+  const key = "sb_publishable_6l60Jz84-8_Gp0r-dphWoQ_7xM_R_MM";
+  const store = "https://apps.apple.com/app/id6824251622";
+  const params = new URLSearchParams(location.search);
+  const fromPath = location.pathname.match(/\/join\/([0-9a-f-]{36})/i);
+  const token = (fromPath ? fromPath[1] : params.get("token") || "").toLowerCase();
+  const valid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(token);
+  if (valid) {
+    const poster = supabase + "/storage/v1/object/public/invite-previews/" + token + "/poster.png";
+    fetch(poster, { method: "HEAD" }).then((response) => { if (response.ok) document.getElementById("poster").src = poster; });
+    fetch(supabase + "/rest/v1/rpc/invite_note_preview", {
+      method: "POST",
+      headers: { apikey: key, Authorization: "Bearer " + key, "Content-Type": "application/json" },
+      body: JSON.stringify({ p_token: token })
+    }).then((response) => response.ok ? response.json() : null).then((preview) => {
+      if (!preview) return;
+      const name = (preview.author_name || "Someone").trim() || "Someone";
+      document.getElementById("title").textContent = name + " sent you a little thing";
+      const bits = [preview.space_name, preview.caption].filter(Boolean);
+      if (bits.length) document.getElementById("detail").textContent = bits.join(" · ");
+    }).catch(() => {});
+  }
+  document.getElementById("open").addEventListener("click", async () => {
+    try {
+      if (valid) {
+        const response = await fetch(supabase + "/rest/v1/rpc/stage_invite_handoff", {
+          method: "POST",
+          headers: { apikey: key, Authorization: "Bearer " + key, "Content-Type": "application/json" },
+          body: JSON.stringify({ p_token: token })
+        });
+        if (response.ok) {
+          const id = await response.json();
+          if (typeof id === "string") await navigator.clipboard.writeText("handoff:" + id);
+        }
+      }
+    } catch (_) {}
+    location.href = store;
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "A7N229A3WP.com.ericleino.littlethings",
+        "paths": ["/join", "/join/*"],
+        "appIDs": ["A7N229A3WP.com.ericleino.littlethings"],
+        "components": [
+          { "/": "/join", "comment": "Query-token invites. Same path the app parser accepts." },
+          { "/": "/join/*", "comment": "Path-token invites. Identical to paths so components does not drop them." }
+        ]
+      }
+    ]
+  }
+}
