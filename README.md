@@ -1,6 +1,8 @@
 # Lil Things
 
-Launch teaser site for the Lil Things iOS app, served as static files from the repository root (GitHub Pages).
+Launch teaser site for the Lil Things iOS app. Production is GitHub Pages from the repository root, with `CNAME` set to `lilthings.app` (the public repo `lein0/lilthings-site`). This copy also lives at `site/` in the app repo so the onboarding restyle can be reviewed with the iOS code.
+
+The page uses the onboarding palette: cream paper, charcoal ink, pastel near-square notes, Nunito for rounded UI type, and Caveat for handwriting. The Little Smiley blinks and follows the pointer, and the email caret while that field is focused.
 
 Preview locally:
 
