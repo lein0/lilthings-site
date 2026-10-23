@@ -7,7 +7,7 @@
   <meta name="description" content="Lil Things is a tiny iPhone app for drawing on each other’s Home Screen widgets, for couples, friends, and groups. Coming soon. Leave your email to hear the moment it launches.">
   <link rel="canonical" href="https://lilthings.app/">
   <meta name="theme-color" content="#FFF3E8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#1C1B22" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#29262E" media="(prefers-color-scheme: dark)">
   <meta name="color-scheme" content="light dark">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lil Things">
@@ -28,6 +28,7 @@
   <link rel="preload" href="/assets/fonts/nunito-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/caveat-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/teaser.css">
+  <script>document.documentElement.classList.add("js");</script>
   <script src="/assets/js/analytics.js"></script>
 </head>
 <body>
@@ -35,60 +36,104 @@
 
   <header class="top">
     <a class="brand" href="/" aria-label="Lil Things home">
-      <img src="/favicon.svg" width="36" height="36" alt="">
-      <span>lil things</span>
+      <span class="mascot-slot brand-mascot" data-mascot data-decorative></span>
+      <span class="name">lil things</span>
     </a>
     <span class="pill">Coming soon to iPhone</span>
   </header>
 
-  <main id="content" class="stage">
-    <p class="script">a little more us.</p>
-    <h1 id="headline">Draw on each other’s widgets.</h1>
-
-    <section class="art" aria-label="Animation: handwritten notes and doodles from a couple and then a group of friends appear on a Lil Things Home Screen widget, with friends reacting">
-      <div class="phone" aria-hidden="true">
-        <div class="island"></div>
-        <div class="clock">9:41</div>
-        <span class="who-chip" id="who-chip">for your person</span>
-        <div class="grid">
-          <div class="widget" id="widget">
-            <div class="w-head">
-              <span class="w-space" id="w-space">Chelsey &amp; Eric</span>
-              <span class="w-avatars" id="w-avatars"></span>
-            </div>
-            <div class="w-sender" id="w-sender"><i class="dot"></i><span>Chelsey</span><em>just now</em></div>
-            <svg class="w-canvas" id="w-canvas" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet"></svg>
-            <div class="w-reacts" id="w-reacts"></div>
-          </div>
-          <i class="app a1"></i><i class="app a2"></i><i class="app a3"></i><i class="app a4"></i>
-          <i class="app a5"></i><i class="app a6"></i><i class="app a7"></i><i class="app a8"></i>
-          <i class="app a9"></i><i class="app a10"></i><i class="app a11"></i><i class="app a12"></i>
+  <main id="content">
+    <section class="hero" aria-labelledby="headline">
+      <div class="intro">
+        <div class="mascot-wrap">
+          <div class="mascot-slot hero-mascot pop" data-mascot data-label="Little Smiley"></div>
         </div>
-        <div class="dock"><i></i><i></i><i></i><i class="lt"></i></div>
+        <div class="intro-copy">
+          <p class="script arrive">a little hello.</p>
+          <svg class="scribble arrive" viewBox="0 0 180 18" aria-hidden="true">
+            <path d="M2 11 C48 2 96 16 176 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <h1 id="headline" class="arrive">Draw on each other’s widgets.</h1>
+        </div>
       </div>
+      <p class="lede arrive">A tiny app for your person and your people. Doodle a note and it draws itself, stroke by stroke, on their Home Screen. For two of you, or the whole crew.</p>
+
+      <section class="art" aria-label="Animation: handwritten notes and doodles from a couple and then a group of friends appear on a Lil Things Home Screen widget, with friends reacting">
+        <div class="phone" aria-hidden="true">
+          <div class="island"></div>
+          <div class="clock">9:41</div>
+          <span class="who-chip" id="who-chip">for your person</span>
+          <div class="grid">
+            <div class="widget" id="widget">
+              <div class="w-head">
+                <span class="w-space" id="w-space">Chelsey &amp; Eric</span>
+                <span class="w-avatars" id="w-avatars"></span>
+              </div>
+              <div class="w-sender" id="w-sender"><i class="dot"></i><span>Chelsey</span><em>just now</em></div>
+              <svg class="w-canvas" id="w-canvas" viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet"></svg>
+              <div class="w-reacts" id="w-reacts"></div>
+            </div>
+            <i class="app a1"></i><i class="app a2"></i><i class="app a3"></i><i class="app a4"></i>
+            <i class="app a5"></i><i class="app a6"></i><i class="app a7"></i><i class="app a8"></i>
+            <i class="app a9"></i><i class="app a10"></i><i class="app a11"></i><i class="app a12"></i>
+          </div>
+          <div class="dock"><i></i><i></i><i></i><i class="lt"></i></div>
+        </div>
+      </section>
+
+      <form class="join sheet arrive" id="join" novalidate aria-describedby="join-note">
+        <div class="sticky peach">
+          <span class="tape" aria-hidden="true"></span>
+          <p class="script-title">leave your email.</p>
+          <label class="sr-only" for="email">Email address</label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" maxlength="254" placeholder="you@example.com" required>
+          <button type="submit"><span class="btn-label">Notify me</span></button>
+          <div class="hp" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <p class="note" id="join-note">Be the first to hear when it launches. No spam, ever.</p>
+          <p class="status" id="join-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
     </section>
 
-    <form class="join" id="join" novalidate aria-describedby="join-note">
-      <label class="sr-only" for="email">Email address</label>
-      <div class="field">
-        <input id="email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" maxlength="254" placeholder="you@example.com" required>
-        <button type="submit"><span class="btn-label">Notify me</span></button>
-      </div>
-      <div class="hp" aria-hidden="true">
-        <label for="website">Leave this field empty</label>
-        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
-      </div>
-      <p class="note" id="join-note">Be the first to hear when it launches. No spam, ever.</p>
-      <p class="status" id="join-status" role="status" aria-live="polite"></p>
-    </form>
-
-    <p class="lede">Lil Things is a tiny app for your person and your people. Doodle a little note and watch it draw itself, stroke by stroke, right on their Home Screen. For two of you, or the whole crew. No feeds. No noise. Just little things.</p>
-
-    <ul class="points" aria-label="What Lil Things does">
-      <li><span aria-hidden="true">✏️</span> Live drawings that replay on the widget</li>
-      <li><span aria-hidden="true">🫶</span> Spaces for couples, friends, and crews</li>
-      <li><span aria-hidden="true">📣</span> Share with followers, if you want</li>
-    </ul>
+    <section class="board" aria-label="What Lil Things does">
+      <article class="sheet reveal" style="--tilt: -2.1deg; --delay: 0ms">
+        <div class="sticky yellow">
+          <span class="tape" aria-hidden="true"></span>
+          <p class="script-title">it draws itself.</p>
+          <p class="body">Live drawings replay on the widget, stroke by stroke.</p>
+        </div>
+      </article>
+      <article class="sheet reveal" style="--tilt: 0deg; --delay: 70ms">
+        <div class="kind">
+          <div class="faces" aria-hidden="true">
+            <svg class="mini" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#FFE59F"/><ellipse cx="11" cy="12" rx="1.5" ry="2.1" fill="#2E2E3A"/><ellipse cx="21" cy="11.6" rx="1.5" ry="2.1" fill="#2E2E3A"/><path d="M9 17.5c2.2 4.2 11.6 4.2 14 0" fill="none" stroke="#2E2E3A" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h2>Just us</h2>
+          <p>You and one person</p>
+        </div>
+      </article>
+      <article class="sheet reveal" style="--tilt: 0deg; --delay: 140ms">
+        <div class="kind crew">
+          <div class="faces stack" aria-hidden="true">
+            <svg class="mini l" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#FFE59F"/><ellipse cx="11" cy="12" rx="1.5" ry="2.1" fill="#2E2E3A"/><ellipse cx="21" cy="11.6" rx="1.5" ry="2.1" fill="#2E2E3A"/><path d="M9 17.5c2.2 4.2 11.6 4.2 14 0" fill="none" stroke="#2E2E3A" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg class="mini r" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#FFE59F"/><ellipse cx="11" cy="12" rx="1.5" ry="2.1" fill="#2E2E3A"/><ellipse cx="21" cy="11.6" rx="1.5" ry="2.1" fill="#2E2E3A"/><path d="M9 17.5c2.2 4.2 11.6 4.2 14 0" fill="none" stroke="#2E2E3A" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg class="mini" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#FFE59F"/><ellipse cx="11" cy="12" rx="1.5" ry="2.1" fill="#2E2E3A"/><ellipse cx="21" cy="11.6" rx="1.5" ry="2.1" fill="#2E2E3A"/><path d="M9 17.5c2.2 4.2 11.6 4.2 14 0" fill="none" stroke="#2E2E3A" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h2>The crew</h2>
+          <p>Up to 10 people</p>
+        </div>
+      </article>
+      <article class="sheet reveal" style="--tilt: 1.8deg; --delay: 210ms">
+        <div class="sticky sage">
+          <span class="tape" aria-hidden="true"></span>
+          <p class="script-title">no feeds.</p>
+          <p class="body">Private notes for the people you invite. Share with followers only if you want.</p>
+        </div>
+      </article>
+    </section>
   </main>
 
   <footer class="foot">
@@ -102,7 +147,9 @@
     <p>© 2026 Eric Leino · iPhone is a trademark of Apple Inc., registered in the U.S. and other countries.</p>
   </footer>
 
+  <script src="/assets/js/mascot.js" defer></script>
   <script src="/assets/js/teaser.js" defer></script>
   <script src="/assets/js/widget.js" defer></script>
+  <script src="/assets/js/home.js" defer></script>
 </body>
 </html>
