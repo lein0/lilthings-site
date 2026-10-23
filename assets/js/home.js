@@ -14,6 +14,7 @@
       if (!entry.isIntersecting) return;
       show(entry.target);
       observer.unobserve(entry.target);
+      document.dispatchEvent(new CustomEvent("lt-arrive"));
     });
   }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
   nodes.forEach((node) => observer.observe(node));

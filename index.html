@@ -49,7 +49,7 @@
           <div class="mascot-slot hero-mascot pop" data-mascot data-label="Little Smiley"></div>
         </div>
         <div class="intro-copy">
-          <p class="script arrive">a little hello.</p>
+          <p class="script arrive" data-write>a little hello.</p>
           <svg class="scribble arrive" viewBox="0 0 180 18" aria-hidden="true">
             <path d="M2 11 C48 2 96 16 176 8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
           </svg>
@@ -59,10 +59,19 @@
       <p class="lede arrive">A tiny app for your person and your people. Doodle a note and it draws itself, stroke by stroke, on their Home Screen. For two of you, or the whole crew.</p>
 
       <section class="art" aria-label="Animation: handwritten notes and doodles from a couple and then a group of friends appear on a Lil Things Home Screen widget, with friends reacting">
+        <div class="phone-stack">
+          <p class="who-note" id="who-chip">
+            <span class="who-label">for your person</span>
+            <svg class="who-arrow" viewBox="0 0 92 58" aria-hidden="true" focusable="false">
+              <path d="M8 14 C26 10 34 26 54 32 C66 36 74 44 82 50" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M64 38 C72 46 78 50 84 52" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M70 34 C76 42 80 48 84 52" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+          </p>
+          <div class="phone-crop">
         <div class="phone" aria-hidden="true">
           <div class="island"></div>
           <div class="clock">9:41</div>
-          <span class="who-chip" id="who-chip">for your person</span>
           <div class="grid">
             <div class="widget" id="widget">
               <div class="w-head">
@@ -79,12 +88,15 @@
           </div>
           <div class="dock"><i></i><i></i><i></i><i class="lt"></i></div>
         </div>
+          </div>
+        </div>
       </section>
 
       <form class="join sheet arrive" id="join" novalidate aria-describedby="join-note">
         <div class="sticky peach">
           <span class="tape" aria-hidden="true"></span>
-          <p class="script-title">leave your email.</p>
+          <span class="note-face" data-face="note" data-tint="#FFE59F" aria-hidden="true"></span>
+          <p class="script-title" data-write>leave your email.</p>
           <label class="sr-only" for="email">Email address</label>
           <input id="email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" maxlength="254" placeholder="you@example.com" required>
           <button type="submit"><span class="btn-label">Notify me</span></button>
@@ -102,14 +114,19 @@
       <article class="sheet reveal" style="--tilt: -2.1deg; --delay: 0ms">
         <div class="sticky yellow">
           <span class="tape" aria-hidden="true"></span>
-          <p class="script-title">it draws itself.</p>
+          <span class="note-face" data-face="note" data-tint="#FFD7C2" aria-hidden="true"></span>
+          <p class="script-title" data-write>it draws itself.</p>
+          <div class="replay" id="replay">
+            <svg id="replay-svg" viewBox="0 0 220 118" role="img" aria-label="A heart and the word hi draw themselves, then friends react"></svg>
+            <div class="replay-reacts" id="replay-reacts"></div>
+          </div>
           <p class="body">Live drawings replay on the widget, stroke by stroke.</p>
         </div>
       </article>
       <article class="sheet reveal" style="--tilt: 0deg; --delay: 70ms">
         <div class="kind">
-          <div class="faces" aria-hidden="true">
-            <svg class="mini" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#FFE59F"/><ellipse cx="11" cy="12" rx="1.5" ry="2.1" fill="#2E2E3A"/><ellipse cx="21" cy="11.6" rx="1.5" ry="2.1" fill="#2E2E3A"/><path d="M9 17.5c2.2 4.2 11.6 4.2 14 0" fill="none" stroke="#2E2E3A" stroke-width="2" stroke-linecap="round"/></svg>
+          <div class="faces pair" data-cast="pair" aria-hidden="true">
+            <svg class="heart-bit" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27 C7 20 3 14 7 9 C10 5 15 7 16 12 C17 7 22 5 25 9 C29 14 25 20 16 27" fill="#e36b8a"/></svg>
           </div>
           <h2>Just us</h2>
           <p>You and one person</p>
@@ -117,11 +134,7 @@
       </article>
       <article class="sheet reveal" style="--tilt: 0deg; --delay: 140ms">
         <div class="kind crew">
-          <div class="faces stack" aria-hidden="true">
-            <svg class="mini l" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#FFE59F"/><ellipse cx="11" cy="12" rx="1.5" ry="2.1" fill="#2E2E3A"/><ellipse cx="21" cy="11.6" rx="1.5" ry="2.1" fill="#2E2E3A"/><path d="M9 17.5c2.2 4.2 11.6 4.2 14 0" fill="none" stroke="#2E2E3A" stroke-width="2" stroke-linecap="round"/></svg>
-            <svg class="mini r" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#FFE59F"/><ellipse cx="11" cy="12" rx="1.5" ry="2.1" fill="#2E2E3A"/><ellipse cx="21" cy="11.6" rx="1.5" ry="2.1" fill="#2E2E3A"/><path d="M9 17.5c2.2 4.2 11.6 4.2 14 0" fill="none" stroke="#2E2E3A" stroke-width="2" stroke-linecap="round"/></svg>
-            <svg class="mini" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#FFE59F"/><ellipse cx="11" cy="12" rx="1.5" ry="2.1" fill="#2E2E3A"/><ellipse cx="21" cy="11.6" rx="1.5" ry="2.1" fill="#2E2E3A"/><path d="M9 17.5c2.2 4.2 11.6 4.2 14 0" fill="none" stroke="#2E2E3A" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
+          <div class="faces crew-faces" data-cast="crew" aria-hidden="true"></div>
           <h2>The crew</h2>
           <p>Up to 10 people</p>
         </div>
@@ -129,7 +142,8 @@
       <article class="sheet reveal" style="--tilt: 1.8deg; --delay: 210ms">
         <div class="sticky sage">
           <span class="tape" aria-hidden="true"></span>
-          <p class="script-title">no feeds.</p>
+          <span class="note-face" data-face="note" data-tint="#FFE59F" aria-hidden="true"></span>
+          <p class="script-title" data-write>no feeds.</p>
           <p class="body">Private notes for the people you invite. Share with followers only if you want.</p>
         </div>
       </article>
@@ -147,9 +161,33 @@
     <p>© 2026 Eric Leino · iPhone is a trademark of Apple Inc., registered in the U.S. and other countries.</p>
   </footer>
 
+  <template id="lt-face">
+    <span class="cast-face">
+      <svg class="mascot" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+        <g class="rig">
+          <rect x="4" y="4" width="92" height="92" rx="24" fill="#FFE59F"/>
+          <ellipse class="blush" cx="24" cy="62" rx="8" ry="4.5" fill="#e9899e" opacity="0"/>
+          <ellipse class="blush" cx="76" cy="62" rx="8" ry="4.5" fill="#e9899e" opacity="0"/>
+          <g class="mascot-eye" data-x="34" data-y="36">
+            <ellipse class="pupil" cx="0" cy="0" rx="3.5" ry="4.75" fill="#2E2E3A"/>
+            <path class="lid" d="M-4.5 0 H4.5" fill="none" stroke="#2E2E3A" stroke-width="3.2" stroke-linecap="round"/>
+            <path class="squint" d="M-9 1.2 Q0 -4 9 1" fill="none" stroke="#2E2E3A" stroke-width="3.8" stroke-linecap="round"/>
+          </g>
+          <g class="mascot-eye" data-x="66" data-y="35">
+            <ellipse class="pupil" cx="0" cy="0" rx="3.5" ry="4.75" fill="#2E2E3A"/>
+            <path class="lid" d="M-4.5 0 H4.5" fill="none" stroke="#2E2E3A" stroke-width="3.2" stroke-linecap="round"/>
+            <path class="squint" d="M-9 1.2 Q0 -4 9 1" fill="none" stroke="#2E2E3A" stroke-width="3.8" stroke-linecap="round"/>
+          </g>
+          <path class="smile" d="M28 52 C36 66 66 65 74 51" fill="none" stroke="#2E2E3A" stroke-width="5.5" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </span>
+  </template>
+  <script src="/assets/js/hand.js" defer></script>
   <script src="/assets/js/mascot.js" defer></script>
   <script src="/assets/js/teaser.js" defer></script>
   <script src="/assets/js/widget.js" defer></script>
+  <script src="/assets/js/replay.js" defer></script>
   <script src="/assets/js/home.js" defer></script>
 </body>
 </html>

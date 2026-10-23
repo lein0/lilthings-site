@@ -80,7 +80,13 @@
     const sc = scenes[key];
     spaceEl.textContent = sc.name;
     avatarsEl.replaceChildren(...sc.members.map((m) => avatar(m)));
-    if (chipEl) chipEl.textContent = sc.chip;
+    const labelEl = chipEl && chipEl.querySelector(".who-label");
+    if (labelEl && labelEl.textContent !== sc.chip) {
+      labelEl.textContent = sc.chip;
+      chipEl.classList.remove("is-swap");
+      void chipEl.offsetWidth;
+      chipEl.classList.add("is-swap");
+    }
     widget.dataset.scene = key;
   }
 
@@ -103,32 +109,32 @@
         p.style.strokeDasharray = lens[k];
         p.style.strokeDashoffset = lens[k];
         parts.push({ kind: "path", node: p, len: lens[k], t0: t, t1: t + d });
-        t += d + 40;
+        t += d + 120;
       });
       t += 80;
     }
 
-    if (m.text && m.text.length) {
+    if (m.text && m.text.length && window.ltHand) {
       const lines = m.text;
-      const size = m.doodle ? 25 : lines.length > 1 ? 33 : 38;
-      const lh = size * 1.02;
-      const top = m.doodle ? 112 : 70 - ((lines.length - 1) * lh) / 2;
+      const size = m.doodle ? 22 : lines.length > 1 ? 26 : 32;
+      const lh = size * 1.25;
+      const top = m.doodle ? 96 : 58 - ((lines.length - 1) * lh) / 2;
+      const nib = el("circle", { r: 2.15, cx: 0, cy: 0, fill: ink, class: "nib", opacity: "0" }, svg);
       lines.forEach((line, k) => {
-        const y = top + k * lh;
-        const id = `lt-clip-${++uid}`;
-        const clip = el("clipPath", { id }, svg);
-        const txt = el("text", { x: 100, y, "text-anchor": "middle", "dominant-baseline": "middle", class: "hand", fill: ink, "font-size": size, "clip-path": `url(#${id})` }, svg);
-        txt.textContent = line;
-        let bb = txt.getBBox();
-        if (bb.width > 186) {
-          txt.setAttribute("font-size", (size * 186) / bb.width);
-          bb = txt.getBBox();
-        }
-        const rect = el("rect", { x: bb.x - 4, y: bb.y - 6, width: 0, height: bb.height + 12 }, clip);
-        const nib = el("circle", { r: 2.4, cx: bb.x, cy: y + bb.height * 0.12, fill: ink, class: "nib" }, svg);
-        const d = Math.max(650, line.length * 66);
-        parts.push({ kind: "text", rect, nib, x: bb.x - 4, w: bb.width + 8, t0: t, t1: t + d });
-        t += d + 120;
+        const laid = window.ltHand.inkLine(svg, line, {
+          cx: 100,
+          cy: top + k * lh,
+          size,
+          maxWidth: 178,
+          fill: ink,
+        });
+        const lineStart = t;
+        laid.parts.forEach((part) => {
+          const t0 = lineStart + part.lead;
+          parts.push({ kind: "glyph", mask: part.mask, len: part.len, t0, t1: t0 + part.dur, point: part.point, nib });
+          t = Math.max(t, t0 + part.dur);
+        });
+        t += 100;
       });
     }
 
@@ -153,15 +159,25 @@
   }
 
   function render(c, t) {
+    let nib = null;
+    let nibAt = null;
     for (const p of c.parts) {
-      const k = ease(clamp((t - p.t0) / (p.t1 - p.t0)));
+      const k = p.kind === "path"
+        ? ease(clamp((t - p.t0) / (p.t1 - p.t0)))
+        : clamp((t - p.t0) / (p.t1 - p.t0));
       if (p.kind === "path") {
         p.node.style.strokeDashoffset = p.len * (1 - k);
-      } else {
-        const w = p.w * k;
-        p.rect.setAttribute("width", w);
-        p.nib.setAttribute("cx", p.x + w);
-        p.nib.style.opacity = k > 0 && k < 1 ? 1 : 0;
+      } else if (p.kind === "glyph") {
+        p.mask.style.strokeDashoffset = String(p.len * (1 - k));
+        nib = p.nib;
+        if (k > 0 && k < 1) nibAt = p.point(k);
+      }
+    }
+    if (nib) {
+      nib.style.opacity = nibAt ? "1" : "0";
+      if (nibAt) {
+        nib.setAttribute("cx", nibAt.x.toFixed(2));
+        nib.setAttribute("cy", nibAt.y.toFixed(2));
       }
     }
     for (const r of c.rx) r.node.classList.toggle("on", t >= r.at && t < c.fadeAt + 150);
