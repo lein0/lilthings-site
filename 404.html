@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lil Things</title>
+<script>
+  const match = location.pathname.match(/\/join\/([0-9a-f-]{36})\/?$/i);
+  if (match) location.replace("/join/?token=" + match[1]);
+</script>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #fff3e8; color: #2e2e3a; font-family: "Avenir Next", sans-serif; }
+  main { width: min(420px, calc(100% - 32px)); }
+  a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <h1>That page wandered off.</h1>
+  <p>If you were opening an invite, the note is at <a href="/join/">lilthings.app/join</a>.</p>
+</main>
+</body>
+</html>
